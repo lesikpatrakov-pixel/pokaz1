@@ -65,7 +65,6 @@ body{
 }
 body.is-locked{overflow:hidden}
 
-/* Touch & tap hygiene */
 *{-webkit-tap-highlight-color:transparent}
 a,button,[role="button"],input,textarea,select,label,.chip span{touch-action:manipulation}
 
@@ -925,7 +924,6 @@ ul{margin:0;padding:0;list-style:none}
 .form__foot{display:flex;flex-direction:column;gap:14px;margin-top:6px}
 .form__note{font-size:12.5px;color:var(--muted-2);text-align:center}
 
-/* Form error banner (JS injected) */
 .form__error-banner{
   display:none;
   padding:12px 16px;
@@ -2038,7 +2036,6 @@ ul{margin:0;padding:0;list-style:none}
     </div>
 
     <form class="form" id="contactForm" novalidate>
-      <!-- Hidden field: service (set dynamically from data-service) -->
       <input type="hidden" id="f-service" name="service" value="">
 
       <div class="form__row">
@@ -2295,9 +2292,7 @@ ul{margin:0;padding:0;list-style:none}
     var budget = trigger && trigger.getAttribute('data-budget');
 
     if (service) {
-      // Сохраняем услугу в скрытое поле
       if (serviceField) serviceField.value = service;
-      // И подсказываем пользователю в поле задачи
       if (!taskField.value.trim()) {
         taskField.value = 'Интересует: ' + service;
       }
@@ -2318,7 +2313,7 @@ ul{margin:0;padding:0;list-style:none}
   }
 
   function closeModal() {
-    if (isSubmitting) return; // не закрываем во время отправки
+    if (isSubmitting) return;
     modal.classList.remove('is-open');
     modal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('is-locked');
@@ -2456,30 +2451,35 @@ ul{margin:0;padding:0;list-style:none}
     setSubmitting(true);
     clearError();
 
-    // POST на Google Apps Script
+    /* ---------------------------------------------------------
+       ОТПРАВКА В GOOGLE APPS SCRIPT
+       ---------------------------------------------------------
+       Важно: используем Content-Type: text/plain;charset=utf-8.
+       Это «простой» CORS-запрос без preflight (OPTIONS).
+       Google Apps Script Web App не отвечает на preflight,
+       поэтому application/json не работает из браузера.
+       GAS внутри парсит тело через JSON.parse(e.postData.contents).
+       --------------------------------------------------------- */
     fetch(GAS_URL, {
       method: 'POST',
+      // ВАЖНО: text/plain, НЕ application/json — иначе CORS preflight падает
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'text/plain;charset=utf-8'
       },
       body: JSON.stringify(payload),
       redirect: 'follow'
     })
       .then(function (response) {
-        // GAS обычно возвращает 200 и JSON вида {"ok":true}
-        // Но может вернуть 302 redirect на content-URL — fetch идёт следом,
-        // поэтому response.ok должен быть true.
         if (!response.ok) {
           throw new Error('HTTP ' + response.status);
         }
-        // Пробуем прочитать JSON, но не падаем, если тело пустое
+        // GAS может вернуть пустое тело или JSON — обрабатываем оба случая
         return response.text().then(function (text) {
           if (!text) return { ok: true };
           try {
             return JSON.parse(text);
           } catch (err) {
-            // Некоторые ответы могут быть не-JSON — считаем успешными,
-            // если статус 200
+            // Не-JSON ответ (HTML и т.п.) — считаем успехом, если статус 200
             return { ok: true };
           }
         });
@@ -2498,10 +2498,9 @@ ul{margin:0;padding:0;list-style:none}
         if (btn) btn.focus({ preventScroll: true });
       })
       .catch(function (err) {
-        // Ошибка — не очищаем поля, показываем сообщение
+        // Ошибка — НЕ очищаем поля, показываем сообщение
         setSubmitting(false);
         showError('Не удалось отправить заявку. Пожалуйста, попробуйте ещё раз или свяжитесь с нами напрямую в Telegram.');
-        // Для отладки можно раскомментировать:
         // console.error('Form submit error:', err);
       });
   });
