@@ -160,9 +160,11 @@ ul{margin:0;padding:0;list-style:none}
 .btn .ico{transition:transform .3s var(--ease)}
 .btn:hover .ico{transform:translateX(4px)}
 .btn:active{transform:translateY(1px)}
+.btn:disabled{cursor:not-allowed}
 
 .btn--primary{background:var(--accent);color:var(--accent-ink)}
 .btn--primary:hover{background:#26ff8e;box-shadow:0 14px 40px -14px rgba(0,230,118,.6)}
+.btn--primary:disabled{background:var(--accent);opacity:.6}
 
 .btn--ghost{background:transparent;border-color:var(--border-2);color:#fff}
 .btn--ghost:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.34)}
@@ -923,6 +925,19 @@ ul{margin:0;padding:0;list-style:none}
 .form__foot{display:flex;flex-direction:column;gap:14px;margin-top:6px}
 .form__note{font-size:12.5px;color:var(--muted-2);text-align:center}
 
+/* Form error banner (JS injected) */
+.form__error-banner{
+  display:none;
+  padding:12px 16px;
+  border-radius:12px;
+  background:rgba(255,92,92,.1);
+  border:1px solid rgba(255,92,92,.4);
+  color:#FF9B9B;
+  font-size:13.5px;
+  line-height:1.5;
+}
+.form__error-banner.is-visible{display:block}
+
 .success{
   display:none;flex-direction:column;align-items:center;text-align:center;
   gap:16px;padding:30px 0 20px;
@@ -937,7 +952,7 @@ ul{margin:0;padding:0;list-style:none}
 }
 .success__icon .ico{width:26px;height:26px;stroke-width:2.4}
 .success__title{font-size:24px;font-weight:800;letter-spacing:-.03em;text-transform:uppercase}
-.success__text{font-size:15px;color:var(--muted);max-width:340px}
+.success__text{font-size:15px;color:var(--muted);max-width:380px}
 @keyframes pop{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
 
 /* ============================================================
@@ -2023,6 +2038,9 @@ ul{margin:0;padding:0;list-style:none}
     </div>
 
     <form class="form" id="contactForm" novalidate>
+      <!-- Hidden field: service (set dynamically from data-service) -->
+      <input type="hidden" id="f-service" name="service" value="">
+
       <div class="form__row">
         <div class="field">
           <label for="f-name">Ваше имя *</label>
@@ -2039,13 +2057,13 @@ ul{margin:0;padding:0;list-style:none}
 
       <div class="field">
         <label for="f-contact">Телефон / Telegram *</label>
-        <input type="text" id="f-contact" name="contact" placeholder="Как с вами связаться?" autocomplete="tel" required>
+        <input type="text" id="f-contact" name="phone" placeholder="Как с вами связаться?" autocomplete="tel" required>
         <span class="field__error">Оставьте телефон или Telegram</span>
       </div>
 
       <div class="field">
         <label for="f-task">Что нужно сделать? *</label>
-        <textarea id="f-task" name="task" placeholder="Например: нужен сайт для автосервиса" required></textarea>
+        <textarea id="f-task" name="message" placeholder="Например: нужен сайт для автосервиса" required></textarea>
         <span class="field__error">Опишите задачу хотя бы коротко</span>
       </div>
 
@@ -2072,9 +2090,11 @@ ul{margin:0;padding:0;list-style:none}
       </div>
 
       <div class="form__foot">
-        <button class="btn btn--primary btn--lg btn--block" type="submit">
-          Отправить заявку
-          <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+        <div class="form__error-banner" id="formError" role="alert"></div>
+
+        <button class="btn btn--primary btn--lg btn--block" type="submit" id="submitBtn">
+          <span id="submitBtnText">Отправить заявку</span>
+          <svg class="ico" aria-hidden="true" id="submitBtnIcon"><use href="#i-arrow"/></svg>
         </button>
         <p class="form__note">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
       </div>
@@ -2085,7 +2105,7 @@ ul{margin:0;padding:0;list-style:none}
         <svg class="ico"><use href="#i-check"/></svg>
       </span>
       <h3 class="success__title">Заявка отправлена</h3>
-      <p class="success__text">Спасибо! Мы свяжемся с вами после получения заявки.</p>
+      <p class="success__text">Спасибо! Заявка отправлена. Мы свяжемся с вами в ближайшее время.</p>
       <button class="btn btn--ghost" type="button" data-modal-close>Закрыть</button>
     </div>
   </div>
@@ -2096,6 +2116,11 @@ ul{margin:0;padding:0;list-style:none}
 <script>
 (function () {
   'use strict';
+
+  /* =========================================================
+     GOOGLE APPS SCRIPT ENDPOINT
+     ========================================================= */
+  var GAS_URL = 'https://script.google.com/macros/s/AKfycbzlnXeQXNI-tfvuIr6052xFFXyAXTNj5jZ3c8weKM3M-2j9RWIYkhz3w6ZC4cvvekpz/exec';
 
   var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -2241,13 +2266,26 @@ ul{margin:0;padding:0;list-style:none}
   var form = document.getElementById('contactForm');
   var success = document.getElementById('formSuccess');
   var taskField = document.getElementById('f-task');
+  var serviceField = document.getElementById('f-service');
+  var errorBanner = document.getElementById('formError');
+  var submitBtn = document.getElementById('submitBtn');
+  var submitBtnText = document.getElementById('submitBtnText');
   var lastFocused = null;
+  var isSubmitting = false;
 
   function resetForm() {
     form.reset();
     form.style.display = '';
     success.classList.remove('is-visible');
     form.querySelectorAll('.field').forEach(function (f) { f.classList.remove('has-error'); });
+    if (errorBanner) {
+      errorBanner.classList.remove('is-visible');
+      errorBanner.textContent = '';
+    }
+    if (serviceField) serviceField.value = '';
+    if (submitBtn) submitBtn.disabled = false;
+    if (submitBtnText) submitBtnText.textContent = 'Отправить заявку';
+    isSubmitting = false;
   }
 
   function openModal(trigger) {
@@ -2256,8 +2294,13 @@ ul{margin:0;padding:0;list-style:none}
     var service = trigger && trigger.getAttribute('data-service');
     var budget = trigger && trigger.getAttribute('data-budget');
 
-    if (service && !taskField.value.trim()) {
-      taskField.value = 'Интересует: ' + service;
+    if (service) {
+      // Сохраняем услугу в скрытое поле
+      if (serviceField) serviceField.value = service;
+      // И подсказываем пользователю в поле задачи
+      if (!taskField.value.trim()) {
+        taskField.value = 'Интересует: ' + service;
+      }
     }
     if (budget) {
       var radio = form.querySelector('input[name="budget"][value="' + budget + '"]');
@@ -2275,6 +2318,7 @@ ul{margin:0;padding:0;list-style:none}
   }
 
   function closeModal() {
+    if (isSubmitting) return; // не закрываем во время отправки
     modal.classList.remove('is-open');
     modal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('is-locked');
@@ -2350,9 +2394,36 @@ ul{margin:0;padding:0;list-style:none}
     });
   });
 
+  /* ---------------------------------------------------------
+     SUBMIT → Google Apps Script
+     --------------------------------------------------------- */
+  function setSubmitting(on) {
+    isSubmitting = on;
+    if (submitBtn) submitBtn.disabled = on;
+    if (submitBtnText) submitBtnText.textContent = on ? 'Отправляем...' : 'Отправить заявку';
+  }
+
+  function showError(message) {
+    if (!errorBanner) return;
+    errorBanner.textContent = message;
+    errorBanner.classList.add('is-visible');
+  }
+
+  function clearError() {
+    if (!errorBanner) return;
+    errorBanner.classList.remove('is-visible');
+    errorBanner.textContent = '';
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
+    // Защита от двойной отправки
+    if (isSubmitting) return;
+
+    clearError();
+
+    // Валидация
     var valid = true;
     var firstInvalid = null;
 
@@ -2368,17 +2439,71 @@ ul{margin:0;padding:0;list-style:none}
       return;
     }
 
-    var submitBtn = form.querySelector('button[type="submit"]');
-    submitBtn.disabled = true;
-    submitBtn.style.opacity = '.6';
+    // Собираем данные
+    var selectedBudget = '';
+    var checkedBudget = form.querySelector('input[name="budget"]:checked');
+    if (checkedBudget) selectedBudget = checkedBudget.value;
 
-    setTimeout(function () {
-      form.style.display = 'none';
-      success.classList.add('is-visible');
-      submitBtn.disabled = false;
-      submitBtn.style.opacity = '';
-      success.querySelector('button').focus({ preventScroll: true });
-    }, 450);
+    var payload = {
+      name: (document.getElementById('f-name').value || '').trim(),
+      phone: (document.getElementById('f-contact').value || '').trim(),
+      company: (document.getElementById('f-company').value || '').trim(),
+      service: (serviceField && serviceField.value || '').trim(),
+      budget: selectedBudget,
+      message: (document.getElementById('f-task').value || '').trim()
+    };
+
+    setSubmitting(true);
+    clearError();
+
+    // POST на Google Apps Script
+    fetch(GAS_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload),
+      redirect: 'follow'
+    })
+      .then(function (response) {
+        // GAS обычно возвращает 200 и JSON вида {"ok":true}
+        // Но может вернуть 302 redirect на content-URL — fetch идёт следом,
+        // поэтому response.ok должен быть true.
+        if (!response.ok) {
+          throw new Error('HTTP ' + response.status);
+        }
+        // Пробуем прочитать JSON, но не падаем, если тело пустое
+        return response.text().then(function (text) {
+          if (!text) return { ok: true };
+          try {
+            return JSON.parse(text);
+          } catch (err) {
+            // Некоторые ответы могут быть не-JSON — считаем успешными,
+            // если статус 200
+            return { ok: true };
+          }
+        });
+      })
+      .then(function (data) {
+        // Если GAS вернул { ok: false, error: "..." } — показываем ошибку
+        if (data && data.ok === false) {
+          throw new Error(data.error || 'Ошибка на стороне сервера');
+        }
+
+        // Успех
+        setSubmitting(false);
+        form.style.display = 'none';
+        success.classList.add('is-visible');
+        var btn = success.querySelector('button');
+        if (btn) btn.focus({ preventScroll: true });
+      })
+      .catch(function (err) {
+        // Ошибка — не очищаем поля, показываем сообщение
+        setSubmitting(false);
+        showError('Не удалось отправить заявку. Пожалуйста, попробуйте ещё раз или свяжитесь с нами напрямую в Telegram.');
+        // Для отладки можно раскомментировать:
+        // console.error('Form submit error:', err);
+      });
   });
 
   /* ---------------------------------------------------------
