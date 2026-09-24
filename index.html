@@ -3,20 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>SKILON WEB — Создание сайтов под ключ</title>
-<meta name="description" content="SKILON WEB создаёт современные сайты для бизнеса: лендинги, сайты компаний, интернет-магазины и редизайн.">
+<title>SKILON WEB — создание сайтов под ключ для бизнеса</title>
+<meta name="description" content="Создаём современные сайты под ключ для бизнеса: дизайн, разработка, адаптив, формы заявок, интеграции и запуск.">
 <meta name="theme-color" content="#0B0B0B">
+<meta name="format-detection" content="telephone=no">
+
+<link rel="canonical" href="https://lesikpatrakov-pixel.github.io/pokaz1/">
+
+<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SKILON WEB">
-<meta property="og:title" content="SKILON WEB — Создание сайтов под ключ">
-<meta property="og:description" content="SKILON WEB создаёт современные сайты для бизнеса: лендинги, сайты компаний, интернет-магазины и редизайн.">
+<meta property="og:title" content="SKILON WEB — создание сайтов под ключ для бизнеса">
+<meta property="og:description" content="Создаём современные сайты под ключ для бизнеса: дизайн, разработка, адаптив, формы заявок, интеграции и запуск.">
+<meta property="og:url" content="https://lesikpatrakov-pixel.github.io/pokaz1/">
 <meta property="og:locale" content="ru_RU">
+
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SKILON WEB — Создание сайтов под ключ">
-<meta name="twitter:description" content="SKILON WEB создаёт современные сайты для бизнеса: лендинги, сайты компаний, интернет-магазины и редизайн.">
+<meta name="twitter:title" content="SKILON WEB — создание сайтов под ключ для бизнеса">
+<meta name="twitter:description" content="Создаём современные сайты под ключ для бизнеса: дизайн, разработка, адаптив, формы заявок, интеграции и запуск.">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230B0B0B'/><text x='50' y='68' font-family='Inter,sans-serif' font-size='54' font-weight='800' fill='%2300E676' text-anchor='middle'>S</text></svg>">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
 /* ============================================================
    TOKENS & RESET
@@ -25,6 +36,7 @@
 
 :root{
   --bg:#0B0B0B;
+  --bg-2:#0F0F0F;
   --card:#141414;
   --card-2:#1B1B1B;
   --text:#FFFFFF;
@@ -48,10 +60,7 @@ html{
   scroll-behavior:smooth;
   scroll-padding-top:calc(var(--header-h) + 20px);
 }
-html,body{
-  overflow-x:clip;
-  max-width:100%;
-}
+html,body{overflow-x:clip;max-width:100%}
 body{
   margin:0;
   background:var(--bg);
@@ -79,7 +88,7 @@ ul{margin:0;padding:0;list-style:none}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
 
 /* ============================================================
-   LAYOUT PRIMITIVES
+   LAYOUT
    ============================================================ */
 .container{
   width:100%;
@@ -102,35 +111,37 @@ ul{margin:0;padding:0;list-style:none}
 }
 
 .h1{
-  font-size:clamp(42px,6.1vw,90px);
-  line-height:.94;
+  font-size:clamp(38px,5.6vw,82px);
+  line-height:.98;
   letter-spacing:-.035em;
   font-weight:800;
   text-transform:uppercase;
 }
 .h2{
-  font-size:clamp(30px,4.3vw,62px);
+  font-size:clamp(28px,4vw,58px);
   line-height:1.02;
   letter-spacing:-.032em;
   font-weight:800;
   text-transform:uppercase;
 }
 .h3{
-  font-size:clamp(20px,1.8vw,24px);
+  font-size:clamp(18px,1.6vw,22px);
   line-height:1.15;
   letter-spacing:-.02em;
   font-weight:700;
   text-transform:uppercase;
 }
 .lead{
-  font-size:clamp(16px,1.25vw,19px);
+  font-size:clamp(15.5px,1.2vw,18px);
   line-height:1.6;
   color:var(--muted);
-  max-width:640px;
+  max-width:680px;
 }
 .accent{color:var(--accent)}
 
 .section-head{display:flex;flex-direction:column;gap:18px;margin-bottom:clamp(40px,5vw,68px)}
+.section-head--center{text-align:center;align-items:center}
+.section-head--center .lead{margin:0 auto}
 .section-head--row{
   flex-direction:row;align-items:flex-end;justify-content:space-between;
   gap:28px;flex-wrap:wrap;
@@ -138,9 +149,9 @@ ul{margin:0;padding:0;list-style:none}
 .section-head__col{display:flex;flex-direction:column;gap:18px}
 
 .grid{display:grid;gap:20px}
+.grid--2{grid-template-columns:repeat(2,1fr)}
 .grid--3{grid-template-columns:repeat(3,1fr)}
 .grid--4{grid-template-columns:repeat(4,1fr)}
-.grid--2{grid-template-columns:repeat(2,1fr)}
 
 /* ============================================================
    BUTTONS
@@ -201,7 +212,7 @@ ul{margin:0;padding:0;list-style:none}
   transition:background .4s var(--ease),border-color .4s var(--ease);
 }
 .header.is-scrolled{
-  background:rgba(11,11,11,.9);
+  background:rgba(11,11,11,.92);
   border-bottom-color:rgba(255,255,255,.13);
 }
 .header__inner{
@@ -218,12 +229,12 @@ ul{margin:0;padding:0;list-style:none}
 
 .nav{display:flex;gap:2px;justify-self:center}
 .nav a{
-  position:relative;padding:10px 15px;font-size:14px;font-weight:500;
+  position:relative;padding:10px 14px;font-size:14px;font-weight:500;
   color:var(--muted);border-radius:8px;
   transition:color .3s var(--ease);
 }
 .nav a::after{
-  content:'';position:absolute;left:15px;right:15px;bottom:5px;height:1px;
+  content:'';position:absolute;left:14px;right:14px;bottom:5px;height:1px;
   background:var(--accent);transform:scaleX(0);transform-origin:left;
   transition:transform .38s var(--ease);
 }
@@ -265,7 +276,7 @@ ul{margin:0;padding:0;list-style:none}
 .mobile-menu.is-open{opacity:1;visibility:visible;transform:none}
 .mobile-menu__nav{display:flex;flex-direction:column;gap:4px}
 .mobile-menu__nav a{
-  font-size:clamp(28px,8vw,40px);
+  font-size:clamp(26px,7.5vw,38px);
   font-weight:800;letter-spacing:-.03em;text-transform:uppercase;
   padding:12px 0;line-height:1.05;
   border-bottom:1px solid var(--border);
@@ -287,73 +298,75 @@ ul{margin:0;padding:0;list-style:none}
    ============================================================ */
 .hero{
   position:relative;
-  min-height:100vh;
-  min-height:100svh;
   display:flex;align-items:center;
-  padding:calc(var(--header-h) + clamp(40px,6vw,76px)) 0 clamp(56px,7vw,96px);
+  padding:calc(var(--header-h) + clamp(48px,7vw,90px)) 0 clamp(56px,7vw,96px);
   overflow:hidden;
 }
 .hero::before{
-  content:'';position:absolute;top:-28%;right:-14%;
-  width:62vw;height:62vw;max-width:900px;max-height:900px;
-  background:radial-gradient(circle,rgba(0,230,118,.075),transparent 62%);
-  pointer-events:none;filter:blur(10px);
+  content:'';position:absolute;top:-24%;right:-16%;
+  width:70vw;height:70vw;max-width:960px;max-height:960px;
+  background:radial-gradient(circle,rgba(0,230,118,.08),transparent 62%);
+  pointer-events:none;filter:blur(12px);
 }
 .hero > .container{position:relative;z-index:1;width:100%}
 
 .hero__grid{
   display:grid;
-  grid-template-columns:1fr 1.02fr;
+  grid-template-columns:1.05fr .95fr;
   gap:clamp(36px,4.5vw,72px);
   align-items:center;
 }
-.hero__col{display:flex;flex-direction:column;gap:clamp(20px,2vw,28px)}
-.hero__title{margin-top:4px}
-.hero__text{max-width:460px}
-
-.hero__actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
-
-.hero__tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
-.tag{
-  display:inline-flex;align-items:center;
-  min-height:30px;padding:0 13px;
-  border:1px solid var(--border);border-radius:100px;
-  font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--muted);
-  transition:color .3s var(--ease),border-color .3s var(--ease);
+.hero__col{display:flex;flex-direction:column;gap:clamp(18px,1.8vw,24px)}
+.hero__title{margin-top:2px}
+.hero__text{max-width:520px}
+.hero__meta{
+  display:inline-flex;align-items:center;flex-wrap:wrap;gap:8px;
+  font-size:13.5px;color:var(--muted);
+  letter-spacing:-.005em;
 }
-.tag:hover{color:#fff;border-color:var(--border-2)}
+.hero__meta .dot{width:4px;height:4px;border-radius:50%;background:var(--muted-2);display:inline-block}
+.hero__meta b{color:#fff;font-weight:600}
 
+.hero__actions{
+  display:flex;flex-wrap:wrap;gap:12px;margin-top:6px;
+  align-items:center;
+}
+
+.hero__note{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;color:var(--muted-2);
+  letter-spacing:.02em;
+  margin-top:2px;
+}
+.hero__note::before{
+  content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--accent);flex:none;
+  box-shadow:0 0 0 4px rgba(0,230,118,.14);
+}
+
+/* Hero visual: stacked browser + floating tags */
 .hero__visual{position:relative;perspective:1600px}
 
 .float-card{
   position:absolute;z-index:3;
   display:inline-flex;align-items:center;gap:9px;
-  padding:11px 15px;
-  background:rgba(20,20,20,.86);
+  padding:10px 14px;
+  background:rgba(20,20,20,.9);
   -webkit-backdrop-filter:blur(12px);
   backdrop-filter:blur(12px);
   border:1px solid var(--border-2);border-radius:14px;
-  font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
+  font-size:10.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
   color:#EAEAEA;
   box-shadow:0 24px 50px -24px rgba(0,0,0,.95);
-  animation:floaty 7s ease-in-out infinite;
   white-space:nowrap;
-  will-change:transform;
 }
 .float-card b{color:var(--accent);font-weight:700}
-.float-card:hover{animation-play-state:paused}
-.float-card--1{top:7%;left:-42px;animation-delay:0s}
-.float-card--2{top:46%;right:-38px;animation-delay:1.1s}
-.float-card--3{bottom:5%;left:-26px;animation-delay:2.2s}
-
-@keyframes floaty{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-9px)}
-}
+.float-card--1{top:6%;left:-36px}
+.float-card--2{top:46%;right:-34px}
+.float-card--3{bottom:6%;left:-22px}
 
 /* ============================================================
-   BROWSER MOCKUP (shared)
+   BROWSER MOCKUP
    ============================================================ */
 .mock{
   position:relative;
@@ -441,7 +454,7 @@ ul{margin:0;padding:0;list-style:none}
   background:var(--card);
   border:1px solid var(--border);
   border-radius:var(--r-card);
-  padding:clamp(24px,2.2vw,34px);
+  padding:clamp(24px,2.2vw,32px);
   transition:transform .45s var(--ease),border-color .45s var(--ease),
              background .45s var(--ease),box-shadow .45s var(--ease);
 }
@@ -452,15 +465,40 @@ ul{margin:0;padding:0;list-style:none}
   box-shadow:0 30px 60px -40px rgba(0,0,0,.9);
 }
 .card__num{
-  font-size:clamp(32px,3vw,44px);
+  font-size:clamp(28px,2.6vw,40px);
   font-weight:800;line-height:1;letter-spacing:-.04em;
   color:rgba(255,255,255,.13);
   transition:color .45s var(--ease);
-  margin-bottom:clamp(28px,4vw,52px);
+  margin-bottom:clamp(24px,3.4vw,44px);
 }
 .card:hover .card__num{color:var(--accent)}
-.card__title{font-size:clamp(18px,1.6vw,21px);font-weight:700;letter-spacing:-.02em;text-transform:uppercase;margin-bottom:12px}
-.card__text{font-size:15px;line-height:1.6;color:var(--muted)}
+.card__title{font-size:clamp(17px,1.5vw,20px);font-weight:700;letter-spacing:-.02em;text-transform:uppercase;margin-bottom:10px}
+.card__text{font-size:14.5px;line-height:1.6;color:var(--muted)}
+
+/* ============================================================
+   AUDIENCE
+   ============================================================ */
+.audience{
+  display:flex;flex-direction:column;gap:14px;
+  padding:clamp(22px,2vw,28px);
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--r-card);
+  transition:transform .45s var(--ease),border-color .45s var(--ease),background .45s var(--ease);
+}
+.audience:hover{
+  transform:translateY(-5px);
+  border-color:rgba(255,255,255,.18);
+  background:#171717;
+}
+.audience__title{
+  font-size:16px;font-weight:700;letter-spacing:-.01em;
+  display:flex;align-items:center;gap:10px;
+}
+.audience__title::before{
+  content:'';width:22px;height:2px;border-radius:2px;background:var(--accent);
+}
+.audience__text{font-size:14px;line-height:1.6;color:var(--muted)}
 
 /* ============================================================
    SERVICES
@@ -471,7 +509,6 @@ ul{margin:0;padding:0;list-style:none}
   border:1px solid var(--border);
   border-radius:var(--r-card);
   padding:clamp(22px,2vw,30px);
-  min-height:280px;
   transition:transform .45s var(--ease),border-color .45s var(--ease),
              background .45s var(--ease),box-shadow .45s var(--ease);
 }
@@ -479,42 +516,52 @@ ul{margin:0;padding:0;list-style:none}
   transform:translateY(-5px);
   border-color:rgba(0,230,118,.34);
   background:#161616;
-  box-shadow:0 30px 60px -40px rgba(0,230,118,.28);
+  box-shadow:0 30px 60px -40px rgba(0,230,118,.24);
 }
-.service__top{
+.service__head{
   display:flex;align-items:center;justify-content:space-between;
-  margin-bottom:auto;padding-bottom:28px;
+  gap:14px;padding-bottom:22px;margin-bottom:22px;
+  border-bottom:1px solid var(--border);
 }
 .service__index{font-size:12px;font-weight:600;letter-spacing:.2em;color:var(--muted-2)}
 .service__title{
-  font-size:clamp(21px,2vw,26px);font-weight:800;
-  letter-spacing:-.03em;text-transform:uppercase;margin-bottom:12px;
+  font-size:clamp(20px,1.9vw,24px);font-weight:800;
+  letter-spacing:-.03em;text-transform:uppercase;
 }
-.service__text{font-size:14.5px;line-height:1.6;color:var(--muted);margin-bottom:26px}
-.service__bottom{
-  display:flex;align-items:center;justify-content:space-between;gap:14px;
-  padding-top:20px;border-top:1px solid var(--border);
+.service__for{font-size:14.5px;line-height:1.55;color:var(--muted);margin-bottom:22px}
+.service__label{
+  font-size:10.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--muted-2);margin-bottom:10px;
 }
-.service__price{font-size:15px;font-weight:700;letter-spacing:-.01em;color:var(--accent)}
-.service__link{
-  display:inline-flex;align-items:center;gap:7px;
-  font-size:13.5px;font-weight:600;color:var(--muted);
-  transition:color .3s var(--ease);
-  min-height:44px;
+.service__list{display:flex;flex-direction:column;gap:9px;margin-bottom:24px}
+.service__list li{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:14px;color:#CFCFCF;line-height:1.5;
 }
-.service__link .ico{transition:transform .3s var(--ease)}
-.service__link:hover{color:#fff}
-.service__link:hover .ico{transform:translateX(4px)}
+.service__list li::before{
+  content:'';flex:none;width:14px;height:14px;
+  margin-top:4px;border-radius:50%;
+  background:
+    radial-gradient(circle at center, var(--accent) 0 3px, transparent 3px),
+    rgba(0,230,118,.14);
+}
+.service__result{
+  font-size:14px;line-height:1.55;color:#CFCFCF;
+  padding:14px 16px;border-radius:12px;
+  background:rgba(0,230,118,.06);
+  border:1px solid rgba(0,230,118,.2);
+  margin-bottom:22px;
+}
+.service__result b{color:var(--accent);font-weight:700}
+.service__bottom{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.service__price{font-size:14.5px;font-weight:700;color:#fff;letter-spacing:-.01em}
 
 /* ============================================================
-   PORTFOLIO
+   CASES
    ============================================================ */
-.portfolio__grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.project{grid-column:span 1}
-.project--lead{grid-column:1 / -1}
-
-.project__link{
-  display:flex;flex-direction:column;height:100%;
+.case{
+  position:relative;
+  display:flex;flex-direction:column;
   background:var(--card);
   border:1px solid var(--border);
   border-radius:var(--r-card);
@@ -522,58 +569,59 @@ ul{margin:0;padding:0;list-style:none}
   transition:transform .5s var(--ease),border-color .5s var(--ease),
              box-shadow .5s var(--ease),background .5s var(--ease);
 }
-.project__link:hover{
+.case:hover{
   transform:translateY(-6px);
   border-color:rgba(255,255,255,.2);
   background:#171717;
   box-shadow:0 40px 80px -50px rgba(0,0,0,.95);
 }
-.project__visual{
+.case__visual{
   position:relative;overflow:hidden;
-  padding:clamp(18px,2.2vw,34px);
+  padding:clamp(18px,2.2vw,30px);
   background:
     radial-gradient(90% 70% at 50% 0%,rgba(255,255,255,.045),transparent 70%),
     #101010;
   border-bottom:1px solid var(--border);
 }
-.project__shot{transition:transform .7s var(--ease)}
-.project__link:hover .project__shot{transform:scale(1.025)}
-.project__badge{
+.case__shot{transition:transform .7s var(--ease)}
+.case:hover .case__shot{transform:scale(1.025)}
+.case__tag{
   position:absolute;top:14px;right:14px;z-index:2;
   padding:6px 11px;border-radius:100px;
-  background:rgba(11,11,11,.8);
+  background:rgba(11,11,11,.82);
   -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
   border:1px solid rgba(0,230,118,.35);
   font-size:9.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
   color:var(--accent);
 }
-.project__meta{
-  display:flex;align-items:center;justify-content:space-between;gap:20px;
-  padding:clamp(18px,2vw,26px);
+.case__body{
+  display:flex;flex-direction:column;gap:18px;
+  padding:clamp(20px,2vw,28px);
   margin-top:auto;
 }
-.project__info{display:flex;flex-direction:column;gap:6px;min-width:0}
-.project__title{
-  font-size:clamp(18px,1.9vw,24px);font-weight:800;
-  letter-spacing:-.03em;text-transform:uppercase;
+.case__title{
+  font-size:clamp(20px,2vw,26px);font-weight:800;
+  letter-spacing:-.03em;text-transform:uppercase;line-height:1.05;
 }
-.project__cat{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-2)}
-.project__tags{display:flex;flex-wrap:wrap;gap:7px}
-.project__tags .tag{font-size:9.5px;min-height:26px;padding:0 11px}
-.project__arrow{
-  flex:none;width:46px;height:46px;border-radius:50%;
-  border:1px solid var(--border-2);
-  display:grid;place-items:center;
-  color:#fff;
-  transition:background .4s var(--ease),border-color .4s var(--ease),
-             transform .4s var(--ease),color .4s var(--ease);
+.case__cat{
+  font-size:11px;font-weight:600;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--muted-2);
+  margin-top:6px;display:block;
 }
-.project__link:hover .project__arrow{
-  background:var(--accent);border-color:var(--accent);color:var(--accent-ink);
-  transform:rotate(-45deg);
+.case__desc{font-size:14.5px;line-height:1.6;color:var(--muted)}
+.case__details{
+  display:grid;grid-template-columns:1fr 1fr;gap:14px;
+  padding-top:18px;border-top:1px solid var(--border);
 }
-.project__arrow .ico{width:18px;height:18px}
+.case__detail{display:flex;flex-direction:column;gap:6px}
+.case__detail-label{
+  font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted-2);
+}
+.case__detail-value{font-size:13.5px;line-height:1.5;color:#CFCFCF}
+.case__cta{margin-top:6px}
 
+/* --- case screens --- */
 .shot{border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:#0E0E0E}
 .shot__bar{
   display:flex;align-items:center;gap:5px;height:26px;padding:0 11px;
@@ -644,6 +692,58 @@ ul{margin:0;padding:0;list-style:none}
 .shot--dompro .mk-card b{color:#111}
 
 /* ============================================================
+   SHOWCASE (Garage 66)
+   ============================================================ */
+.showcase{
+  display:grid;grid-template-columns:1.05fr .95fr;
+  gap:clamp(30px,4vw,60px);
+  align-items:center;
+  padding:clamp(28px,3vw,48px);
+  background:
+    radial-gradient(120% 80% at 80% 10%, rgba(0,230,118,.06), transparent 60%),
+    var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  overflow:hidden;
+}
+.showcase__col{display:flex;flex-direction:column;gap:18px}
+.showcase__title{
+  font-size:clamp(24px,2.6vw,36px);font-weight:800;
+  letter-spacing:-.03em;text-transform:uppercase;line-height:1.05;
+}
+.showcase__desc{font-size:15px;line-height:1.6;color:var(--muted);max-width:460px}
+.showcase__badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 12px;border-radius:100px;
+  background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.3);
+  font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--accent);width:fit-content;
+}
+
+/* ============================================================
+   WHY
+   ============================================================ */
+.why{
+  display:flex;flex-direction:column;gap:16px;
+  padding:clamp(22px,2.2vw,30px);
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--r-card);
+  transition:transform .45s var(--ease),border-color .45s var(--ease),
+             background .45s var(--ease);
+}
+.why:hover{transform:translateY(-5px);border-color:rgba(255,255,255,.18);background:#171717}
+.why__num{
+  font-size:11px;font-weight:700;letter-spacing:.22em;
+  color:var(--accent);
+}
+.why__title{
+  font-size:16px;font-weight:700;letter-spacing:-.01em;text-transform:uppercase;
+  margin-top:-6px;
+}
+.why__text{font-size:14.5px;line-height:1.6;color:var(--muted)}
+
+/* ============================================================
    PROCESS
    ============================================================ */
 .process__track{
@@ -672,27 +772,37 @@ ul{margin:0;padding:0;list-style:none}
   box-shadow:0 0 0 6px rgba(0,230,118,.08);
 }
 .step__title{
-  font-size:15px;font-weight:700;letter-spacing:-.01em;text-transform:uppercase;
+  font-size:14.5px;font-weight:700;letter-spacing:-.01em;text-transform:uppercase;
   margin:22px 0 10px;
 }
 .step__text{font-size:13.5px;line-height:1.55;color:var(--muted)}
 
 /* ============================================================
-   WHY
+   WHAT YOU GET
    ============================================================ */
-.why{
-  display:flex;flex-direction:column;gap:16px;
-  padding:clamp(24px,2.2vw,32px);
+.get{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+.get__item{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:18px 20px;
   background:var(--card);
   border:1px solid var(--border);
-  border-radius:var(--r-card);
-  transition:transform .45s var(--ease),border-color .45s var(--ease),
-             background .45s var(--ease);
+  border-radius:16px;
+  font-size:14.5px;line-height:1.5;
+  color:#DFDFDF;
+  transition:border-color .35s var(--ease),background .35s var(--ease);
 }
-.why:hover{transform:translateY(-5px);border-color:rgba(255,255,255,.18);background:#171717}
-.why__bar{width:28px;height:2px;background:var(--accent);border-radius:2px}
-.why__title{font-size:16px;font-weight:700;letter-spacing:.01em;text-transform:uppercase}
-.why__text{font-size:14.5px;line-height:1.6;color:var(--muted)}
+.get__item:hover{border-color:rgba(0,230,118,.3);background:rgba(0,230,118,.04)}
+.get__check{
+  flex:none;width:22px;height:22px;border-radius:50%;
+  background:rgba(0,230,118,.14);border:1px solid rgba(0,230,118,.4);
+  display:grid;place-items:center;color:var(--accent);
+  margin-top:1px;
+}
+.get__check .ico{width:12px;height:12px;stroke-width:2.6}
 
 /* ============================================================
    PRICING
@@ -723,25 +833,92 @@ ul{margin:0;padding:0;list-style:none}
 }
 .plan__name{font-size:13px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
 .plan__price{
-  font-size:clamp(30px,3vw,40px);font-weight:800;letter-spacing:-.04em;
+  font-size:clamp(28px,2.9vw,38px);font-weight:800;letter-spacing:-.04em;
   margin:14px 0 6px;
 }
-.plan__note{font-size:13px;color:var(--muted-2);margin-bottom:26px}
-.plan__list{display:flex;flex-direction:column;gap:12px;margin-bottom:30px}
+.plan__for{font-size:13.5px;color:var(--muted);line-height:1.5;margin-bottom:24px;min-height:2.4em}
+.plan__list{display:flex;flex-direction:column;gap:11px;margin-bottom:28px}
 .plan__list li{display:flex;align-items:flex-start;gap:11px;font-size:14.5px;color:#CFCFCF;line-height:1.45}
 .plan__list .ico{width:15px;height:15px;color:var(--accent);margin-top:3px}
 .plan__cta{margin-top:auto}
 
+.pricing__note{
+  margin-top:32px;text-align:center;
+  font-size:13.5px;color:var(--muted-2);line-height:1.6;
+  max-width:640px;margin-left:auto;margin-right:auto;
+}
+
+/* ============================================================
+   CALCULATOR
+   ============================================================ */
+.calc{
+  display:grid;grid-template-columns:1.35fr 1fr;
+  gap:clamp(24px,3vw,48px);
+  padding:clamp(24px,3vw,44px);
+  background:
+    radial-gradient(120% 100% at 0% 0%, rgba(0,230,118,.06), transparent 55%),
+    var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+}
+.calc__col{display:flex;flex-direction:column;gap:22px}
+.calc__group{display:flex;flex-direction:column;gap:10px}
+.calc__label{
+  font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted-2);
+}
+.calc__options{display:flex;flex-wrap:wrap;gap:9px}
+.calc__opt{position:relative}
+.calc__opt input{
+  position:absolute;inset:0;width:100%;height:100%;opacity:0;margin:0;cursor:pointer;
+}
+.calc__opt span{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:44px;padding:0 18px;border-radius:100px;
+  border:1px solid var(--border);
+  font-size:13.5px;color:var(--muted);
+  transition:background .28s var(--ease),border-color .28s var(--ease),color .28s var(--ease);
+  white-space:nowrap;
+}
+.calc__opt:hover span{border-color:var(--border-2);color:#fff}
+.calc__opt input:checked + span{
+  background:rgba(0,230,118,.14);
+  border-color:var(--accent);
+  color:#fff;
+}
+.calc__opt input:focus-visible + span{outline:2px solid var(--accent);outline-offset:2px}
+
+.calc__result{
+  display:flex;flex-direction:column;gap:14px;
+  padding:26px 24px;
+  background:rgba(0,0,0,.4);
+  border:1px solid var(--border);
+  border-radius:20px;
+  position:sticky;top:calc(var(--header-h) + 20px);
+  align-self:start;
+}
+.calc__result-label{
+  font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted-2);
+}
+.calc__result-price{
+  font-size:clamp(30px,3.4vw,44px);font-weight:800;letter-spacing:-.04em;
+  color:#fff;line-height:1;
+  transition:opacity .3s var(--ease);
+}
+.calc__result-note{font-size:12.5px;color:var(--muted-2);line-height:1.55}
+.calc__result-cta{margin-top:8px}
+
 /* ============================================================
    FAQ
    ============================================================ */
-.faq{max-width:900px}
+.faq{max-width:900px;margin:0 auto}
 .faq-item{border-bottom:1px solid var(--border)}
 .faq-item:first-child{border-top:1px solid var(--border)}
 .faq-q{
   width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;
-  padding:26px 0;text-align:left;
-  font-size:clamp(16px,1.5vw,19px);font-weight:600;letter-spacing:-.015em;
+  padding:24px 0;text-align:left;
+  font-size:clamp(15.5px,1.4vw,18px);font-weight:600;letter-spacing:-.015em;
   color:#fff;
   transition:color .3s var(--ease);
   min-height:56px;
@@ -759,21 +936,18 @@ ul{margin:0;padding:0;list-style:none}
   transform:rotate(135deg);
   background:var(--accent);border-color:var(--accent);color:var(--accent-ink);
 }
-.faq-a{
-  max-height:0;overflow:hidden;
-  transition:max-height .5s var(--ease);
-}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .5s var(--ease)}
 .faq-a__inner{
-  padding:0 60px 28px 0;
-  font-size:15px;line-height:1.65;color:var(--muted);
+  padding:0 60px 26px 0;
+  font-size:14.5px;line-height:1.65;color:var(--muted);
 }
 
 /* ============================================================
-   CTA
+   FINAL CTA
    ============================================================ */
 .cta{
   position:relative;overflow:hidden;
-  padding:clamp(80px,11vw,170px) 0;
+  padding:clamp(80px,10vw,150px) 0;
   border-top:1px solid var(--border);
   border-bottom:1px solid var(--border);
   text-align:center;
@@ -786,12 +960,13 @@ ul{margin:0;padding:0;list-style:none}
   pointer-events:none;
 }
 .cta .container{position:relative;z-index:1}
-.cta__inner{display:flex;flex-direction:column;align-items:center;gap:clamp(22px,2.6vw,34px)}
+.cta__inner{display:flex;flex-direction:column;align-items:center;gap:clamp(20px,2.4vw,30px)}
 .cta__title{
-  font-size:clamp(34px,6vw,86px);
-  line-height:.96;letter-spacing:-.04em;font-weight:800;text-transform:uppercase;
+  font-size:clamp(32px,5.6vw,80px);
+  line-height:.98;letter-spacing:-.04em;font-weight:800;text-transform:uppercase;
 }
-.cta__text{font-size:clamp(15px,1.3vw,18px);line-height:1.6;color:var(--muted);max-width:600px}
+.cta__text{font-size:clamp(15px,1.2vw,17px);line-height:1.6;color:var(--muted);max-width:620px}
+.cta__actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
 .cta__note{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2)}
 
 /* ============================================================
@@ -800,11 +975,11 @@ ul{margin:0;padding:0;list-style:none}
 .footer{border-top:1px solid var(--border);padding:clamp(56px,7vw,96px) 0 30px}
 .footer__grid{
   display:grid;
-  grid-template-columns:1.7fr 1fr 1fr;
+  grid-template-columns:1.6fr 1fr 1fr;
   gap:clamp(32px,4vw,64px);
-  padding-bottom:clamp(48px,6vw,80px);
+  padding-bottom:clamp(40px,5vw,72px);
 }
-.footer__brand{display:flex;flex-direction:column;gap:16px;max-width:340px}
+.footer__brand{display:flex;flex-direction:column;gap:14px;max-width:340px}
 .footer__tagline{font-size:14.5px;line-height:1.6;color:var(--muted)}
 .footer__col{display:flex;flex-direction:column;gap:16px}
 .footer__title{
@@ -827,7 +1002,7 @@ ul{margin:0;padding:0;list-style:none}
 .footer__links a:hover::after{transform:scaleX(1)}
 .footer__bottom{
   display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
-  padding-top:28px;border-top:1px solid var(--border);
+  padding-top:26px;border-top:1px solid var(--border);
   font-size:12.5px;color:var(--muted-2);
 }
 .footer__bottom a{transition:color .3s var(--ease)}
@@ -840,18 +1015,18 @@ ul{margin:0;padding:0;list-style:none}
   position:fixed;inset:0;z-index:200;
   display:flex;align-items:center;justify-content:center;
   padding:20px;
-  background:rgba(5,5,5,.78);
+  background:rgba(5,5,5,.8);
   -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
   opacity:0;visibility:hidden;
   transition:opacity .32s var(--ease),visibility .32s;
 }
 .modal.is-open{opacity:1;visibility:visible}
 .modal__panel{
-  position:relative;width:100%;max-width:640px;max-height:92vh;overflow-y:auto;
+  position:relative;width:100%;max-width:600px;max-height:92vh;overflow-y:auto;
   background:#101010;
   border:1px solid var(--border-2);
   border-radius:24px;
-  padding:clamp(24px,3.4vw,44px);
+  padding:clamp(24px,3.2vw,40px);
   transform:translateY(18px) scale(.985);
   transition:transform .4s var(--ease);
   box-shadow:0 60px 140px -40px rgba(0,0,0,1);
@@ -866,18 +1041,18 @@ ul{margin:0;padding:0;list-style:none}
   transition:background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease);
 }
 .modal__close:hover{background:rgba(255,255,255,.06);color:#fff;border-color:var(--border-2)}
-.modal__head{display:flex;flex-direction:column;gap:12px;margin-bottom:30px;padding-right:44px}
-.modal__title{font-size:clamp(22px,2.6vw,30px);font-weight:800;letter-spacing:-.03em;text-transform:uppercase;line-height:1.08}
-.modal__sub{font-size:14.5px;color:var(--muted);line-height:1.55}
+.modal__head{display:flex;flex-direction:column;gap:10px;margin-bottom:26px;padding-right:44px}
+.modal__title{font-size:clamp(20px,2.4vw,26px);font-weight:800;letter-spacing:-.03em;text-transform:uppercase;line-height:1.08}
+.modal__sub{font-size:14px;color:var(--muted);line-height:1.55}
 
-.form{display:flex;flex-direction:column;gap:18px}
-.form__row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form{display:flex;flex-direction:column;gap:16px}
+.form__row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .field{display:flex;flex-direction:column;gap:8px}
 .field label{
   font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
   color:var(--muted);
 }
-.field input,.field textarea{
+.field input,.field textarea,.field select{
   width:100%;
   background:#0C0C0C;
   border:1px solid var(--border);
@@ -890,39 +1065,28 @@ ul{margin:0;padding:0;list-style:none}
   -webkit-appearance:none;
   appearance:none;
 }
-.field textarea{min-height:112px;resize:vertical;line-height:1.5;padding-top:15px}
+.field select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A0A0A0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 16px center;
+  background-size:16px;
+  padding-right:44px;
+  cursor:pointer;
+}
+.field select option{background:#0C0C0C;color:#fff}
+.field textarea{min-height:104px;resize:vertical;line-height:1.5;padding-top:15px}
 .field input::placeholder,.field textarea::placeholder{color:#5C5C5C}
-.field input:focus,.field textarea:focus{
+.field input:focus,.field textarea:focus,.field select:focus{
   outline:none;border-color:var(--accent);background:#111;
   box-shadow:0 0 0 3px rgba(0,230,118,.13);
 }
-.field.has-error input,.field.has-error textarea{border-color:#FF5C5C}
-.field.has-error input:focus,.field.has-error textarea:focus{box-shadow:0 0 0 3px rgba(255,92,92,.14)}
+.field.has-error input,.field.has-error textarea,.field.has-error select{border-color:#FF5C5C}
+.field.has-error input:focus,.field.has-error textarea:focus,.field.has-error select:focus{box-shadow:0 0 0 3px rgba(255,92,92,.14)}
 .field__error{display:none;font-size:12px;color:#FF8080}
 .field.has-error .field__error{display:block}
 
-.chips{display:flex;flex-wrap:wrap;gap:9px}
-.chip{position:relative}
-.chip input{
-  position:absolute;inset:0;width:100%;height:100%;opacity:0;margin:0;cursor:pointer;
-}
-.chip span{
-  display:flex;align-items:center;justify-content:center;
-  min-height:46px;padding:0 18px;border-radius:100px;
-  border:1px solid var(--border);
-  font-size:14px;color:var(--muted);
-  transition:background .28s var(--ease),border-color .28s var(--ease),color .28s var(--ease);
-}
-.chip:hover span{border-color:var(--border-2);color:#fff}
-.chip input:checked + span{
-  background:rgba(0,230,118,.13);
-  border-color:var(--accent);
-  color:#fff;
-}
-.chip input:focus-visible + span{outline:2px solid var(--accent);outline-offset:2px}
-
 .form__foot{display:flex;flex-direction:column;gap:14px;margin-top:6px}
-.form__note{font-size:12.5px;color:var(--muted-2);text-align:center}
+.form__note{font-size:12px;color:var(--muted-2);text-align:center;line-height:1.55}
 
 .form__error-banner{
   display:none;
@@ -938,7 +1102,7 @@ ul{margin:0;padding:0;list-style:none}
 
 .success{
   display:none;flex-direction:column;align-items:center;text-align:center;
-  gap:16px;padding:30px 0 20px;
+  gap:16px;padding:24px 0 12px;
 }
 .success.is-visible{display:flex}
 .success__icon{
@@ -949,35 +1113,41 @@ ul{margin:0;padding:0;list-style:none}
   animation:pop .5s var(--ease);
 }
 .success__icon .ico{width:26px;height:26px;stroke-width:2.4}
-.success__title{font-size:24px;font-weight:800;letter-spacing:-.03em;text-transform:uppercase}
-.success__text{font-size:15px;color:var(--muted);max-width:380px}
+.success__title{font-size:22px;font-weight:800;letter-spacing:-.03em;text-transform:uppercase}
+.success__text{font-size:14.5px;color:var(--muted);max-width:380px;line-height:1.6}
+.success__actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:4px}
 @keyframes pop{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
 
 /* ============================================================
-   REVEAL ANIMATION
+   STICKY MOBILE CTA
+   ============================================================ */
+.sticky-cta{
+  display:none;
+  position:fixed;
+  left:max(16px, env(safe-area-inset-left));
+  right:max(16px, env(safe-area-inset-right));
+  bottom:calc(16px + env(safe-area-inset-bottom));
+  z-index:90;
+  opacity:0;transform:translateY(20px);
+  pointer-events:none;
+  transition:opacity .35s var(--ease),transform .35s var(--ease);
+}
+.sticky-cta.is-visible{opacity:1;transform:none;pointer-events:auto}
+.sticky-cta .btn{width:100%;box-shadow:0 20px 40px -20px rgba(0,230,118,.5)}
+
+/* ============================================================
+   REVEAL
    ============================================================ */
 .reveal{opacity:0}
 .reveal.done{opacity:1}
 .reveal.in{animation:rise .75s var(--ease) both;animation-delay:var(--d,0ms)}
 @keyframes rise{
-  from{opacity:0;transform:translateY(26px)}
+  from{opacity:0;transform:translateY(24px)}
   to{opacity:1;transform:translateY(0)}
 }
 
 /* ============================================================
-   CAROUSEL DOTS
-   ============================================================ */
-.carousel-dots{display:none;justify-content:center;gap:8px;margin-top:22px}
-.carousel-dots button{
-  width:7px;height:7px;border-radius:50%;
-  background:rgba(255,255,255,.2);
-  transition:background .3s var(--ease),width .3s var(--ease);
-  padding:0;min-width:7px;
-}
-.carousel-dots button.is-active{background:var(--accent);width:22px;border-radius:100px}
-
-/* ============================================================
-   RESPONSIVE — TABLET
+   RESPONSIVE
    ============================================================ */
 @media (max-width:1180px){
   .grid--4{grid-template-columns:repeat(2,1fr)}
@@ -990,20 +1160,24 @@ ul{margin:0;padding:0;list-style:none}
 }
 
 @media (max-width:1024px){
-  .hero__grid{grid-template-columns:1fr;gap:56px}
-  .hero__text{max-width:560px}
-  .hero{min-height:auto}
-  .hero__visual{max-width:660px}
+  .hero__grid{grid-template-columns:1fr;gap:52px}
+  .hero__text{max-width:600px}
+  .hero__visual{max-width:640px}
   .float-card--1{left:-12px;top:4%}
   .float-card--2{right:-10px}
   .float-card--3{left:-6px;bottom:-14px}
   .pricing__grid{grid-template-columns:1fr;max-width:560px;margin:0 auto}
+  .calc{grid-template-columns:1fr}
+  .calc__result{position:static}
+  .showcase{grid-template-columns:1fr;gap:32px}
+  .get{grid-template-columns:repeat(2,1fr)}
 }
 
 @media (max-width:980px){
   .nav,.header__cta{display:none}
   .header__inner{grid-template-columns:1fr auto}
   .burger{display:flex}
+  .sticky-cta{display:block}
 }
 
 @media (max-width:900px){
@@ -1013,15 +1187,15 @@ ul{margin:0;padding:0;list-style:none}
   .footer__brand{grid-column:1 / -1;max-width:none}
 }
 
-/* ============================================================
-   MOBILE OPTIMIZATION LAYER
-   ============================================================ */
+/* Touch devices: kill hover-cost */
 @media (hover: none){
   .card:hover,
   .service:hover,
   .why:hover,
   .plan:hover,
-  .project__link:hover{
+  .case:hover,
+  .audience:hover,
+  .get__item:hover{
     transform:none;
     box-shadow:none;
   }
@@ -1029,8 +1203,8 @@ ul{margin:0;padding:0;list-style:none}
   .service:hover{border-color:var(--border);background:var(--card)}
   .plan:hover{border-color:var(--border);background:var(--card)}
   .plan--featured:hover{border-color:rgba(0,230,118,.4)}
-  .project__link:hover{border-color:var(--border);background:var(--card)}
-  .project__link:hover .project__shot{transform:none}
+  .case:hover{border-color:var(--border);background:var(--card)}
+  .case:hover .case__shot{transform:none}
   .btn:hover{box-shadow:none}
   .btn--primary:hover{background:var(--accent)}
   .btn:active{transform:translateY(1px)}
@@ -1047,38 +1221,31 @@ ul{margin:0;padding:0;list-style:none}
   .reveal{opacity:1 !important}
 }
 
-@media (max-width: 768px){
+@media (max-width:768px){
   .header{
     -webkit-backdrop-filter:blur(12px) saturate(140%);
     backdrop-filter:blur(12px) saturate(140%);
   }
 
   .hero{
-    min-height:auto;
-    padding-top:calc(var(--header-h) + 36px);
-    padding-bottom:44px;
+    padding-top:calc(var(--header-h) + 40px);
+    padding-bottom:40px;
   }
   .hero::before{display:none}
-  .hero__grid{gap:40px}
+  .hero__grid{gap:36px}
   .hero__col{gap:16px}
 
-  .h1{font-size:clamp(36px,11vw,48px);line-height:.96}
-  .h2{font-size:clamp(28px,8.5vw,40px)}
-  .lead{font-size:15.5px;line-height:1.6}
+  .h1{font-size:clamp(32px,10.5vw,44px);line-height:1}
+  .h2{font-size:clamp(26px,8vw,38px)}
+  .lead{font-size:15px}
 
   .hero__actions{flex-direction:column;align-items:stretch;gap:10px}
   .hero__actions .btn{width:100%}
   .btn{min-height:54px}
   .btn--lg{min-height:58px}
 
-  .hero__tags{margin-top:2px}
-  .hero__tags .tag{font-size:10px;min-height:28px;padding:0 11px}
-
-  .hero__visual{padding:24px 14px 0;max-width:100%}
-  .mock{
-    border-radius:14px;
-    box-shadow:0 26px 50px -32px rgba(0,0,0,.95);
-  }
+  .hero__visual{padding:20px 12px 0;max-width:100%}
+  .mock{border-radius:14px;box-shadow:0 26px 50px -32px rgba(0,0,0,.95)}
   .mock__bar{height:30px;padding:0 11px;gap:5px}
   .mock__dot{width:7px;height:7px}
   .mock__url{font-size:9px;padding:2px 9px;margin-left:8px}
@@ -1089,7 +1256,7 @@ ul{margin:0;padding:0;list-style:none}
   .mk-card{padding:.85em .8em;border-radius:.75em}
 
   .float-card{
-    font-size:9.5px;padding:9px 12px;border-radius:12px;gap:7px;
+    font-size:9.5px;padding:8px 11px;border-radius:11px;gap:6px;
     background:rgba(20,20,20,.96);
     -webkit-backdrop-filter:none;
     backdrop-filter:none;
@@ -1100,14 +1267,15 @@ ul{margin:0;padding:0;list-style:none}
   .float-card--2{top:48%;right:0}
   .float-card--3{bottom:-10px;left:6px}
 
-  .section{padding:64px 0}
-  .section--tight{padding-top:40px}
-  .section-head{margin-bottom:36px;gap:14px}
+  .section{padding:60px 0}
+  .section--tight{padding-top:36px}
+  .section-head{margin-bottom:32px;gap:14px}
 
   .services__grid{grid-template-columns:1fr}
-  .service{min-height:auto;padding:24px}
+  .service{padding:22px}
 
-  .portfolio__grid{
+  /* Cases: horizontal swipe */
+  .cases__grid{
     display:flex;
     grid-template-columns:none;
     gap:14px;
@@ -1123,21 +1291,14 @@ ul{margin:0;padding:0;list-style:none}
     padding-left:var(--pad);
     padding-right:var(--pad);
   }
-  .portfolio__grid::-webkit-scrollbar{display:none}
-  .project{
-    flex:0 0 86%;
-    scroll-snap-align:center;
-    scroll-snap-stop:always;
-    grid-column:auto;
-  }
-  .project--lead{grid-column:auto}
-  .project__visual{padding:16px}
-  .project__meta{padding:16px 18px 20px;gap:14px}
-  .project__arrow{width:42px;height:42px}
-  .project__tags{display:none}
+  .cases__grid::-webkit-scrollbar{display:none}
+  .case{flex:0 0 86%;scroll-snap-align:center;scroll-snap-stop:always;grid-column:auto}
+  .case__visual{padding:16px}
+  .case__body{padding:20px;gap:16px}
+  .case__details{grid-template-columns:1fr;gap:12px}
   .shot__body{font-size:9.5px;padding:1.4em}
-  .carousel-dots{display:flex}
 
+  /* Process: vertical timeline */
   .process__track{display:block;grid-template-columns:none}
   .process__track::before{
     display:block;
@@ -1145,45 +1306,46 @@ ul{margin:0;padding:0;list-style:none}
     width:1px;height:auto;
     background:linear-gradient(180deg,transparent,rgba(255,255,255,.16) 5%,rgba(255,255,255,.16) 95%,transparent);
   }
-  .step{padding:0 0 34px 68px}
+  .step{padding:0 0 32px 68px}
   .step:last-child{padding-bottom:0}
   .step__dot{position:absolute;left:0;top:0}
-  .step__title{margin:0 0 8px;padding-top:11px;font-size:14.5px}
+  .step__title{margin:0 0 8px;padding-top:11px;font-size:14px}
   .step__text{font-size:13.5px}
 
   .grid--4{grid-template-columns:1fr}
+  .get{grid-template-columns:1fr;gap:10px}
+  .get__item{padding:16px 18px}
 
-  .plan{padding:28px 22px;border-radius:22px}
-  .plan__price{font-size:32px}
+  .plan{padding:26px 22px;border-radius:22px}
+  .plan__price{font-size:30px}
   .plan__badge{left:22px}
 
-  .faq-q{gap:16px;padding:22px 0;font-size:16px}
+  .calc{padding:24px 20px;border-radius:20px;gap:24px}
+  .calc__opt span{min-height:42px;padding:0 14px;font-size:13px}
+  .calc__result{padding:22px 20px}
+
+  .faq-q{gap:16px;padding:22px 0;font-size:15.5px}
   .faq-q__icon{width:34px;height:34px}
-  .faq-a__inner{padding:0 0 24px 0;font-size:14.5px}
+  .faq-a__inner{padding:0 0 22px 0;font-size:14px}
 
-  .cta{padding:76px 0}
-  .cta::before{
-    width:min(520px,140vw);height:min(520px,140vw);
-  }
-  .cta__title{font-size:clamp(32px,9vw,44px)}
-  .cta__text{font-size:15px}
-  .cta .btn--lg{width:100%}
+  .cta{padding:72px 0}
+  .cta::before{width:min(520px,140vw);height:min(520px,140vw)}
+  .cta__title{font-size:clamp(30px,8.5vw,42px)}
+  .cta__text{font-size:14.5px}
+  .cta__actions{width:100%;flex-direction:column;align-items:stretch}
+  .cta__actions .btn{width:100%}
 
-  .footer{padding:52px 0 26px}
-  .footer__grid{grid-template-columns:1fr;gap:32px}
+  .footer{padding:50px 0 100px}
+  .footer__grid{grid-template-columns:1fr;gap:30px}
   .footer__bottom{flex-direction:column;align-items:flex-start;gap:12px}
 
   .form__row{grid-template-columns:1fr}
-  .field input,.field textarea{min-height:54px;padding:15px 16px}
-  .field textarea{min-height:118px}
-  .chips{gap:8px}
-  .chip{flex:1 1 calc(50% - 4px)}
-  .chip span{min-height:48px;padding:0 14px;font-size:14px;width:100%}
-  .form__foot .btn--lg{min-height:58px}
+  .field input,.field textarea,.field select{min-height:54px;padding:15px 16px}
+  .field textarea{min-height:104px}
 
   .modal{padding:0;align-items:flex-end}
   .modal__panel{
-    max-height:92dvh;
+    max-height:94dvh;
     border-radius:24px 24px 0 0;
     border-bottom:0;
     padding:22px 20px 26px;
@@ -1193,78 +1355,42 @@ ul{margin:0;padding:0;list-style:none}
     display:block;
     width:42px;height:4px;border-radius:100px;
     background:rgba(255,255,255,.18);
-    margin:0 auto 18px;
+    margin:0 auto 16px;
   }
-  .modal__head{margin-bottom:22px;padding-right:48px}
-  .modal__title{font-size:clamp(20px,6vw,26px)}
+  .modal__head{margin-bottom:20px;padding-right:48px}
+  .modal__title{font-size:clamp(19px,5.6vw,24px)}
   .modal__close{top:12px;right:12px;width:42px;height:42px}
 }
 
 @supports (padding: env(safe-area-inset-bottom)) {
   @media (max-width: 768px){
     .modal__panel{padding-bottom:calc(26px + env(safe-area-inset-bottom))}
-    .footer{padding-bottom:calc(26px + env(safe-area-inset-bottom))}
+    .footer{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
   }
 }
 
-@media (max-width: 420px){
+@media (max-width:420px){
   .mock__body{font-size:9px}
   .mock__url{display:none}
   .shot__url{display:none}
   .mk-links{display:none}
-  .project{flex:0 0 90%}
+  .case{flex:0 0 90%}
   .float-card--1{top:-4px;left:0}
   .float-card--2{right:0;top:50%}
   .float-card--3{bottom:-8px;left:4px}
-  .h1{font-size:clamp(34px,10.5vw,42px)}
+  .h1{font-size:clamp(28px,9.5vw,38px)}
 }
 
-/* ============================================================
-   PROJECT CTA LINK — "Посмотреть проект"
-   ============================================================ */
-.project__cta{
-  display:inline-flex;align-items:center;justify-content:center;gap:10px;
-  margin-top:16px;
-  min-height:48px;padding:0 22px;
-  border-radius:var(--r-btn);
-  background:var(--accent);color:var(--accent-ink);
-  font-size:14px;font-weight:700;letter-spacing:-.01em;
-  border:1px solid transparent;
-  width:fit-content;
-  transition:background .3s var(--ease),box-shadow .3s var(--ease),
-             transform .3s var(--ease),color .3s var(--ease);
-  position:relative;
-  z-index:2;
-}
-.project__cta .ico{transition:transform .3s var(--ease)}
-.project__cta:hover{
-  background:#26ff8e;
-  box-shadow:0 14px 40px -14px rgba(0,230,118,.6);
-}
-.project__cta:hover .ico{transform:translateX(4px)}
-.project__cta:active{transform:translateY(1px)}
-.project__cta:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-
-.project__cta-wrap{
-  padding:0 clamp(18px,2vw,26px) clamp(18px,2vw,26px);
-  display:flex;
-  align-items:center;
-  justify-content:flex-start;
-}
-
-@media (max-width: 768px){
-  .project__cta{
-    width:100%;
-    min-height:52px;
-    font-size:15px;
-  }
-  .project__cta-wrap{padding:0 18px 20px}
+@media (max-width:360px){
+  :root{--pad:16px}
+  .h1{font-size:clamp(26px,9vw,34px)}
+  .btn{padding:0 20px;font-size:14.5px}
 }
 </style>
 </head>
 <body id="top">
 
-<!-- ============ ICON SPRITE ============ -->
+<!-- ICONS -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
   <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
@@ -1273,9 +1399,10 @@ ul{margin:0;padding:0;list-style:none}
   <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></symbol>
   <symbol id="i-external" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></symbol>
+  <symbol id="i-telegram" viewBox="0 0 24 24"><path d="M21.5 4.5L2.5 12l6 2 2 6 4-5 7-10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 14l1 6 3-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
 </svg>
 
-<!-- ============ HEADER ============ -->
+<!-- HEADER -->
 <header class="header" id="header">
   <div class="container header__inner">
     <a class="logo" href="#top" aria-label="SKILON WEB — на главную">
@@ -1288,10 +1415,11 @@ ul{margin:0;padding:0;list-style:none}
       <a href="#works">Работы</a>
       <a href="#process">Процесс</a>
       <a href="#pricing">Цены</a>
+      <a href="#faq">FAQ</a>
     </nav>
 
     <div class="header__cta">
-      <button class="btn btn--primary" type="button" data-modal-open>
+      <button class="btn btn--primary" type="button" data-modal-open data-cta="header_cta">
         Обсудить проект
         <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
       </button>
@@ -1303,17 +1431,18 @@ ul{margin:0;padding:0;list-style:none}
   </div>
 </header>
 
-<!-- ============ MOBILE MENU ============ -->
+<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <nav class="mobile-menu__nav" aria-label="Мобильная навигация">
     <a href="#services">Услуги</a>
     <a href="#works">Работы</a>
     <a href="#process">Процесс</a>
     <a href="#pricing">Цены</a>
+    <a href="#faq">FAQ</a>
     <a href="#contacts">Контакты</a>
   </nav>
   <div class="mobile-menu__footer">
-    <button class="btn btn--primary btn--lg btn--block" type="button" data-modal-open>
+    <button class="btn btn--primary btn--lg btn--block" type="button" data-modal-open data-cta="mobile_menu_cta">
       Обсудить проект
       <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
     </button>
@@ -1323,7 +1452,7 @@ ul{margin:0;padding:0;list-style:none}
 
 <main>
 
-<!-- ============ HERO ============ -->
+<!-- HERO -->
 <section class="hero">
   <div class="container">
     <div class="hero__grid">
@@ -1332,42 +1461,526 @@ ul{margin:0;padding:0;list-style:none}
         <span class="eyebrow reveal">Digital studio / 2026</span>
 
         <h1 class="h1 hero__title reveal" style="--d:60ms">
-          Сайт,<br>который<br><span class="accent">работает</span><br>на бизнес.
+          Сайты, которые помогают бизнесу <span class="accent">получать клиентов</span>.
         </h1>
 
         <p class="lead hero__text reveal" style="--d:140ms">
-          Создаём современные сайты под ключ — от идеи и дизайна до запуска.
+          Создаём современные сайты под ключ — от структуры и дизайна
+          до разработки, запуска и подключения заявок.
         </p>
 
+        <div class="hero__meta reveal" style="--d:180ms">
+          <span>Для малого и среднего бизнеса</span>
+          <span class="dot" aria-hidden="true"></span>
+          <span>от <b>19 900 ₽</b></span>
+        </div>
+
         <div class="hero__actions reveal" style="--d:220ms">
-          <button class="btn btn--primary btn--lg" type="button" data-modal-open>
+          <button class="btn btn--primary btn--lg" type="button" data-modal-open data-cta="hero_cta">
             Обсудить проект
             <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
           </button>
-          <a class="btn btn--ghost btn--lg" href="#works">
+          <a class="btn btn--ghost btn--lg" href="#works" data-cta="hero_secondary">
             Смотреть работы
             <svg class="ico" aria-hidden="true"><use href="#i-arrow-down"/></svg>
           </a>
         </div>
 
-        <div class="hero__tags reveal" style="--d:300ms">
-          <span class="tag">Landing</span>
-          <span class="tag">Business</span>
-          <span class="tag">E-commerce</span>
-          <span class="tag">Redesign</span>
-        </div>
+        <span class="hero__note reveal" style="--d:280ms">Ответим в течение рабочего дня</span>
       </div>
 
       <div class="hero__visual reveal" style="--d:200ms">
-        <div class="float-card float-card--1"><b>01</b> / Design</div>
-        <div class="float-card float-card--2"><b>02</b> / Development</div>
-        <div class="float-card float-card--3"><b>03</b> / Launch</div>
+        <div class="float-card float-card--1"><b>01</b> / Дизайн</div>
+        <div class="float-card float-card--2"><b>02</b> / Разработка</div>
+        <div class="float-card float-card--3"><b>03</b> / Запуск</div>
 
-        <div class="mock">
+        <div class="mock" aria-hidden="true">
           <div class="mock__bar">
-            <span class="mock__dot"></span>
-            <span class="mock__dot"></span>
-            <span class="mock__dot"></span>
+            <span class="mock__dot"></span><span class="mock__dot"></span><span class="mock__dot"></span>
+            <span class="mock__url">your-site.ru</span>
+          </div>
+          <div class="mock__body">
+            <div class="mk-nav">
+              <span class="mk-logo">YOUR<span>BRAND</span></span>
+              <span class="mk-links"><span>Услуги</span><span>Цены</span><span>Контакты</span></span>
+              <span class="mk-btn">Оставить заявку</span>
+            </div>
+
+            <div class="mk-hero">
+              <div>
+                <span class="mk-tag">Современный сайт</span>
+                <div class="mk-h1">Понятно. <span>Аккуратно. Под задачу.</span></div>
+                <p class="mk-p">Структура, дизайн, разработка и запуск — под ключ.</p>
+                <span class="mk-cta">Обсудить проект</span>
+              </div>
+              <div class="mk-visual">
+                <svg viewBox="0 0 120 62" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="8" y="10" width="104" height="42" rx="4"/>
+                  <path d="M8 22h104"/>
+                  <path d="M18 32h28M18 40h44"/>
+                  <circle cx="104" cy="16" r="2" fill="currentColor"/>
+                  <circle cx="96" cy="16" r="2" fill="currentColor"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="mk-cards">
+              <div class="mk-card"><b>01</b>Структура</div>
+              <div class="mk-card"><b>02</b>Дизайн</div>
+              <div class="mk-card"><b>03</b>Запуск</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="section" id="approach">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Подход</span>
+      <h2 class="h2">Не просто красивый сайт.<br>А инструмент для бизнеса.</h2>
+      <p class="lead">
+        Сайт должен не только выглядеть современно. Он должен понятно объяснять,
+        чем занимается компания, вызывать доверие и помогать потенциальному клиенту
+        сделать следующий шаг.
+      </p>
+    </div>
+
+    <div class="grid grid--3" data-stagger>
+      <article class="card reveal">
+        <span class="card__num">01</span>
+        <h3 class="card__title">Понятно</h3>
+        <p class="card__text">Клиент за несколько секунд понимает, чем занимается ваша компания и что вы предлагаете.</p>
+      </article>
+
+      <article class="card reveal">
+        <span class="card__num">02</span>
+        <h3 class="card__title">Доверие</h3>
+        <p class="card__text">Профессиональный дизайн, понятная структура и реальные преимущества компании.</p>
+      </article>
+
+      <article class="card reveal">
+        <span class="card__num">03</span>
+        <h3 class="card__title">Заявки</h3>
+        <p class="card__text">Формы, кнопки связи и необходимые интеграции помогают посетителю быстро связаться с вами.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section class="section section--tight" id="audience">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Для кого</span>
+      <h2 class="h2">Сайты для бизнеса,<br>которому есть что показать.</h2>
+      <p class="lead">
+        Мы создаём решения для разных сфер. Ниже — направления, под которые
+        чаще всего разрабатываются сайты.
+      </p>
+    </div>
+
+    <div class="grid grid--3" data-stagger>
+      <article class="audience reveal">
+        <h3 class="audience__title">Автобизнес</h3>
+        <p class="audience__text">Автосервисы, детейлинг, автомойки, магазины запчастей.</p>
+      </article>
+
+      <article class="audience reveal">
+        <h3 class="audience__title">Рестораны</h3>
+        <p class="audience__text">Рестораны, бары, кафе, банкетные площадки.</p>
+      </article>
+
+      <article class="audience reveal">
+        <h3 class="audience__title">Сфера услуг</h3>
+        <p class="audience__text">Салоны, студии, частные специалисты и сервисные компании.</p>
+      </article>
+
+      <article class="audience reveal">
+        <h3 class="audience__title">Строительство и ремонт</h3>
+        <p class="audience__text">Строительные компании, ремонт, окна, двери, интерьер.</p>
+      </article>
+
+      <article class="audience reveal">
+        <h3 class="audience__title">Малый бизнес</h3>
+        <p class="audience__text">Компании, которым нужен современный сайт для привлечения клиентов.</p>
+      </article>
+
+      <article class="audience reveal">
+        <h3 class="audience__title">Локальные компании</h3>
+        <p class="audience__text">Бизнес, работающий в одном городе или районе — с понятной подачей услуг.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Услуги</span>
+      <h2 class="h2">Что мы делаем</h2>
+      <p class="lead">Собираем сайт под конкретную задачу бизнеса — без лишних функций и перегруза.</p>
+    </div>
+
+    <div class="grid grid--4 services__grid" data-stagger>
+
+      <article class="service reveal">
+        <div class="service__head">
+          <span class="service__index">01</span>
+          <h3 class="service__title">Landing</h3>
+        </div>
+        <p class="service__for">Для услуги, продукта или рекламной кампании.</p>
+        <div class="service__label">Что входит</div>
+        <ul class="service__list">
+          <li>Структура и тексты</li>
+          <li>Дизайн страницы</li>
+          <li>Адаптив под смартфоны</li>
+          <li>Формы заявок</li>
+          <li>Аналитика</li>
+          <li>Публикация</li>
+        </ul>
+        <div class="service__result">
+          <b>Результат:</b> одна страница, которая приводит посетителя к заявке.
+        </div>
+        <div class="service__bottom">
+          <span class="service__price">от 19 900 ₽</span>
+          <button class="btn btn--ghost btn--sm" type="button" data-modal-open data-service="Landing" data-cta="service_cta">
+            Обсудить
+            <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </button>
+        </div>
+      </article>
+
+      <article class="service reveal">
+        <div class="service__head">
+          <span class="service__index">02</span>
+          <h3 class="service__title">Business</h3>
+        </div>
+        <p class="service__for">Для полноценного сайта компании.</p>
+        <div class="service__label">Что входит</div>
+        <ul class="service__list">
+          <li>До 7 страниц</li>
+          <li>Индивидуальный дизайн</li>
+          <li>Адаптив под устройства</li>
+          <li>Формы заявок</li>
+          <li>Интеграции и аналитика</li>
+          <li>Базовая SEO-настройка</li>
+        </ul>
+        <div class="service__result">
+          <b>Результат:</b> сайт, который понятно рассказывает о компании и её услугах.
+        </div>
+        <div class="service__bottom">
+          <span class="service__price">от 39 900 ₽</span>
+          <button class="btn btn--ghost btn--sm" type="button" data-modal-open data-service="Business" data-cta="service_cta">
+            Обсудить
+            <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </button>
+        </div>
+      </article>
+
+      <article class="service reveal">
+        <div class="service__head">
+          <span class="service__index">03</span>
+          <h3 class="service__title">E-commerce</h3>
+        </div>
+        <p class="service__for">Для каталога или интернет-магазина.</p>
+        <div class="service__label">Что входит</div>
+        <ul class="service__list">
+          <li>Каталог товаров</li>
+          <li>Корзина и оформление</li>
+          <li>Карточки товаров</li>
+          <li>Интеграции с оплатой</li>
+          <li>Адаптив и аналитика</li>
+          <li>Публикация</li>
+        </ul>
+        <div class="service__result">
+          <b>Результат:</b> работающий каталог с возможностью оформлять заказы.
+        </div>
+        <div class="service__bottom">
+          <span class="service__price">от 69 900 ₽</span>
+          <button class="btn btn--ghost btn--sm" type="button" data-modal-open data-service="E-commerce" data-cta="service_cta">
+            Обсудить
+            <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </button>
+        </div>
+      </article>
+
+      <article class="service reveal">
+        <div class="service__head">
+          <span class="service__index">04</span>
+          <h3 class="service__title">Redesign</h3>
+        </div>
+        <p class="service__for">Для обновления существующего сайта.</p>
+        <div class="service__label">Что входит</div>
+        <ul class="service__list">
+          <li>Анализ текущего сайта</li>
+          <li>Новая структура</li>
+          <li>Современный дизайн</li>
+          <li>Улучшение адаптива</li>
+          <li>Обновление форм</li>
+          <li>Перенос и публикация</li>
+        </ul>
+        <div class="service__result">
+          <b>Результат:</b> сайт выглядит современно и работает удобнее.
+        </div>
+        <div class="service__bottom">
+          <span class="service__price">от 15 000 ₽</span>
+          <button class="btn btn--ghost btn--sm" type="button" data-modal-open data-service="Redesign" data-cta="service_cta">
+            Обсудить
+            <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </button>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- WORKS / CASES -->
+<section class="section" id="works">
+  <div class="container">
+    <div class="section-head section-head--row reveal">
+      <div class="section-head__col">
+        <span class="eyebrow">Работы</span>
+        <h2 class="h2">Работы, которые<br>можно посмотреть прямо сейчас.</h2>
+      </div>
+      <a class="link-arrow" href="#cta" data-cta="works_link">
+        Обсудить проект
+        <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="cases__grid grid grid--3" id="casesTrack">
+
+      <!-- BLACKLINE DETAILING -->
+      <article class="case reveal">
+        <div class="case__visual">
+          <span class="case__tag">Concept / Demo</span>
+          <div class="case__shot">
+            <div class="shot shot--garage">
+              <div class="shot__bar">
+                <span class="shot__dot"></span><span class="shot__dot"></span><span class="shot__dot"></span>
+                <span class="shot__url">blackline-detailing.ru</span>
+              </div>
+              <div class="shot__body">
+                <div class="mk-nav">
+                  <span class="mk-logo">BLACKLINE<span> DETAILING</span></span>
+                  <span class="mk-links"><span>Услуги</span><span>Работы</span><span>Контакты</span></span>
+                  <span class="mk-btn">Записаться</span>
+                </div>
+                <div class="mk-hero">
+                  <div>
+                    <span class="mk-tag">Детейлинг-центр</span>
+                    <div class="mk-h1">Премиальный уход <span>за вашим авто</span></div>
+                    <p class="mk-p">Полировка, керамика, химчистка и защита кузова.</p>
+                    <span class="mk-cta">Записаться на детейлинг</span>
+                  </div>
+                  <div class="mk-visual">
+                    <svg viewBox="0 0 120 62" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M6 45 L11 30 L28 30 L40 17 L76 17 L88 30 L112 34 L114 45 Z"/>
+                      <circle cx="31" cy="45" r="7"/>
+                      <circle cx="91" cy="45" r="7"/>
+                      <path d="M40 30 L76 30" opacity=".5"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="shot__row">
+                  <div class="shot__cell"><b>01</b>Полировка</div>
+                  <div class="shot__cell"><b>02</b>Керамика</div>
+                  <div class="shot__cell"><b>03</b>Химчистка</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="case__body">
+          <div>
+            <h3 class="case__title">Blackline Detailing</h3>
+            <span class="case__cat">Детейлинг / Автосервис</span>
+          </div>
+          <p class="case__desc">Премиальный детейлинг-центр: полировка, керамика, химчистка и защита кузова.</p>
+
+          <div class="case__details">
+            <div class="case__detail">
+              <span class="case__detail-label">Задача</span>
+              <span class="case__detail-value">Показать уровень услуг и привести на запись.</span>
+            </div>
+            <div class="case__detail">
+              <span class="case__detail-label">Разработано</span>
+              <span class="case__detail-value">Структура, дизайн, адаптив, формы записи.</span>
+            </div>
+          </div>
+
+          <div class="case__cta">
+            <a class="btn btn--primary btn--block" href="https://lesikpatrakov-pixel.github.io/pokaz4/" target="_blank" rel="noopener noreferrer" data-cta="portfolio_cta">
+              Посмотреть проект
+              <svg class="ico" aria-hidden="true"><use href="#i-external"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- NOVA INTERIOR -->
+      <article class="case reveal">
+        <div class="case__visual">
+          <span class="case__tag">Concept / Demo</span>
+          <div class="case__shot">
+            <div class="shot shot--dompro">
+              <div class="shot__bar">
+                <span class="shot__dot"></span><span class="shot__dot"></span><span class="shot__dot"></span>
+                <span class="shot__url">nova-interior.ru</span>
+              </div>
+              <div class="shot__body">
+                <div class="mk-nav">
+                  <span class="mk-logo">NOVA<span> INTERIOR</span></span>
+                  <span class="mk-links"><span>Проекты</span><span>Услуги</span></span>
+                  <span class="mk-btn">Обсудить</span>
+                </div>
+                <div class="mk-hero">
+                  <div>
+                    <span class="mk-tag">Ремонт квартир</span>
+                    <div class="mk-h1">Ремонт <span>под ключ</span></div>
+                    <p class="mk-p">Дизайн-проект, отделка и комплектация.</p>
+                    <span class="mk-cta" style="border-color:rgba(0,0,0,.25);color:#111">Смотреть проекты</span>
+                  </div>
+                  <div class="mk-visual">
+                    <svg viewBox="0 0 120 62" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 50 V26 L44 10 L76 26 V50 Z"/>
+                      <path d="M34 50 V36 H54 V50"/>
+                      <path d="M84 50 V34 L104 24 L104 50 Z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="shot__row" style="display:grid;grid-template-columns:repeat(3,1fr);gap:.8em;margin-top:1.4em">
+                  <div class="mk-card"><b style="color:#111">01</b>Дизайн</div>
+                  <div class="mk-card"><b style="color:#111">02</b>Ремонт</div>
+                  <div class="mk-card"><b style="color:#111">03</b>Мебель</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="case__body">
+          <div>
+            <h3 class="case__title">Nova Interior</h3>
+            <span class="case__cat">Ремонт / Интерьер</span>
+          </div>
+          <p class="case__desc">Премиальный ремонт квартир под ключ: дизайн-проект, отделка и комплектация.</p>
+
+          <div class="case__details">
+            <div class="case__detail">
+              <span class="case__detail-label">Задача</span>
+              <span class="case__detail-value">Показать качество работ и собрать заявки.</span>
+            </div>
+            <div class="case__detail">
+              <span class="case__detail-label">Разработано</span>
+              <span class="case__detail-value">Структура, дизайн, портфолио, формы.</span>
+            </div>
+          </div>
+
+          <div class="case__cta">
+            <a class="btn btn--primary btn--block" href="https://lesikpatrakov-pixel.github.io/pokaz3/" target="_blank" rel="noopener noreferrer" data-cta="portfolio_cta">
+              Посмотреть проект
+              <svg class="ico" aria-hidden="true"><use href="#i-external"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- BLACK CUT -->
+      <article class="case reveal">
+        <div class="case__visual">
+          <span class="case__tag">Concept / Demo</span>
+          <div class="case__shot">
+            <div class="shot shot--blackcut">
+              <div class="shot__bar">
+                <span class="shot__dot"></span><span class="shot__dot"></span><span class="shot__dot"></span>
+                <span class="shot__url">blackcut.ru</span>
+              </div>
+              <div class="shot__body">
+                <div class="mk-nav">
+                  <span class="mk-logo">BLACK<span> CUT</span></span>
+                  <span class="mk-links"><span>Услуги</span><span>Мастера</span></span>
+                  <span class="mk-btn">Записаться</span>
+                </div>
+                <div class="shot__big">Барбершоп<br><em>нового формата</em></div>
+                <div class="shot__chips">
+                  <span>Стрижка</span>
+                  <span>Борода</span>
+                  <span>Бритьё</span>
+                </div>
+                <div class="shot__stripe"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="case__body">
+          <div>
+            <h3 class="case__title">Black Cut</h3>
+            <span class="case__cat">Барбершоп</span>
+          </div>
+          <p class="case__desc">Стильный сайт барбершопа с акцентом на атмосферу и запись.</p>
+
+          <div class="case__details">
+            <div class="case__detail">
+              <span class="case__detail-label">Задача</span>
+              <span class="case__detail-value">Передать атмосферу и упростить запись.</span>
+            </div>
+            <div class="case__detail">
+              <span class="case__detail-label">Разработано</span>
+              <span class="case__detail-value">Дизайн, структура, форма записи.</span>
+            </div>
+          </div>
+
+          <div class="case__cta">
+            <a class="btn btn--primary btn--block" href="https://lesikpatrakov-pixel.github.io/pokaz2/" target="_blank" rel="noopener noreferrer" data-cta="portfolio_cta">
+              Посмотреть проект
+              <svg class="ico" aria-hidden="true"><use href="#i-external"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="reveal" style="font-size:13px;color:var(--muted-2);margin-top:24px;text-align:center;">
+      Все проекты выше — концептуальные демонстрации. Они показывают подход к дизайну и структуре, а не реальные коммерческие работы.
+    </p>
+  </div>
+</section>
+
+<!-- GARAGE 66 SHOWCASE -->
+<section class="section section--tight" id="showcase">
+  <div class="container">
+    <div class="showcase reveal">
+      <div class="showcase__col">
+        <span class="showcase__badge">Концептуальный пример</span>
+        <h3 class="showcase__title">Garage 66</h3>
+        <p class="showcase__desc">
+          Концептуальный пример сайта для автомобильного бизнеса. Показывает,
+          как может выглядеть современный автосервис в интернете: понятная структура,
+          аккуратный дизайн, запись и карточки услуг.
+        </p>
+        <button class="btn btn--ghost" type="button" data-modal-open data-service="Сайт для автосервиса" data-cta="showcase_cta">
+          Хочу похожий сайт
+          <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </button>
+      </div>
+
+      <div class="showcase__visual">
+        <div class="mock" aria-hidden="true">
+          <div class="mock__bar">
+            <span class="mock__dot"></span><span class="mock__dot"></span><span class="mock__dot"></span>
             <span class="mock__url">garage66.ru</span>
           </div>
           <div class="mock__body">
@@ -1376,7 +1989,6 @@ ul{margin:0;padding:0;list-style:none}
               <span class="mk-links"><span>Услуги</span><span>Цены</span><span>Контакты</span></span>
               <span class="mk-btn">Записаться</span>
             </div>
-
             <div class="mk-hero">
               <div>
                 <span class="mk-tag">Автосервис</span>
@@ -1393,7 +2005,6 @@ ul{margin:0;padding:0;list-style:none}
                 </svg>
               </div>
             </div>
-
             <div class="mk-cards">
               <div class="mk-card"><b>01</b>Диагностика</div>
               <div class="mk-card"><b>02</b>ТО и ремонт</div>
@@ -1402,437 +2013,163 @@ ul{margin:0;padding:0;list-style:none}
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ============ APPROACH ============ -->
-<section class="section" id="approach">
+<!-- WHY -->
+<section class="section" id="why">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">Our approach</span>
-      <h2 class="h2">Вам нужен<br>не просто сайт.</h2>
-      <p class="lead">
-        Вам нужен инструмент, который понятно рассказывает о компании,
-        показывает преимущества и помогает клиенту сделать следующий шаг.
-      </p>
-    </div>
-
-    <div class="grid grid--3" data-stagger>
-      <article class="card reveal">
-        <span class="card__num">01</span>
-        <h3 class="card__title">Впечатление</h3>
-        <p class="card__text">Первое впечатление о компании начинается с экрана.</p>
-      </article>
-
-      <article class="card reveal">
-        <span class="card__num">02</span>
-        <h3 class="card__title">Доверие</h3>
-        <p class="card__text">Понятная структура, аккуратный дизайн и правильная подача создают доверие к бизнесу.</p>
-      </article>
-
-      <article class="card reveal">
-        <span class="card__num">03</span>
-        <h3 class="card__title">Заявки</h3>
-        <p class="card__text">Каждый элемент сайта работает на то, чтобы посетителю было проще связаться с вами.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SERVICES ============ -->
-<section class="section section--tight" id="services">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">Services</span>
-      <h2 class="h2">Что мы делаем</h2>
-      <p class="lead">Собираем сайт под конкретную задачу бизнеса.</p>
-    </div>
-
-    <div class="grid grid--4 services__grid" data-stagger>
-
-      <article class="service reveal">
-        <div class="service__top"><span class="service__index">01</span></div>
-        <h3 class="service__title">Landing</h3>
-        <p class="service__text">Одностраничный сайт для услуги, продукта или рекламной кампании.</p>
-        <div class="service__bottom">
-          <span class="service__price">от 19 900 ₽</span>
-          <button class="service__link" type="button" data-modal-open data-service="Landing — одностраничный сайт">
-            Подробнее
-            <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
-          </button>
-        </div>
-      </article>
-
-      <article class="service reveal">
-        <div class="service__top"><span class="service__index">02</span></div>
-        <h3 class="service__title">Business</h3>
-        <p class="service__text">Современный сайт компании с несколькими страницами и понятной структурой.</p>
-        <div class="service__bottom">
-          <span class="service__price">от 39 900 ₽</span>
-          <button class="service__link" type="button" data-modal-open data-service="Business — сайт компании">
-            Подробнее
-            <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
-          </button>
-        </div>
-      </article>
-
-      <article class="service reveal">
-        <div class="service__top"><span class="service__index">03</span></div>
-        <h3 class="service__title">E-commerce</h3>
-        <p class="service__text">Каталог или интернет-магазин с необходимым функционалом.</p>
-        <div class="service__bottom">
-          <span class="service__price">от 69 900 ₽</span>
-          <button class="service__link" type="button" data-modal-open data-service="E-commerce — каталог или интернет-магазин">
-            Подробнее
-            <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
-          </button>
-        </div>
-      </article>
-
-      <article class="service reveal">
-        <div class="service__top"><span class="service__index">04</span></div>
-        <h3 class="service__title">Redesign</h3>
-        <p class="service__text">Обновляем старый сайт и делаем его современным и удобным.</p>
-        <div class="service__bottom">
-          <span class="service__price">от 15 000 ₽</span>
-          <button class="service__link" type="button" data-modal-open data-service="Redesign — обновление существующего сайта">
-            Подробнее
-            <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
-          </button>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============ PORTFOLIO ============ -->
-<section class="section" id="works">
-  <div class="container">
-    <div class="section-head section-head--row reveal">
-      <div class="section-head__col">
-        <span class="eyebrow">Selected works</span>
-        <h2 class="h2">Работы</h2>
-      </div>
-      <a class="link-arrow" href="#cta">
-        Все проекты
-        <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
-      </a>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="portfolio__grid" id="portfolioTrack">
-
-      <!-- PROJECT 01 — BLACKLINE DETAILING -->
-      <article class="project project--lead reveal">
-        <div class="project__link">
-          <div class="project__visual">
-            <span class="project__badge">Concept project</span>
-            <div class="project__shot">
-              <div class="shot shot--garage">
-                <div class="shot__bar">
-                  <span class="shot__dot"></span><span class="shot__dot"></span><span class="shot__dot"></span>
-                  <span class="shot__url">blackline-detailing.ru</span>
-                </div>
-                <div class="shot__body">
-                  <div class="mk-nav">
-                    <span class="mk-logo">BLACKLINE<span> DETAILING</span></span>
-                    <span class="mk-links"><span>Услуги</span><span>Работы</span><span>Контакты</span></span>
-                    <span class="mk-btn">Записаться</span>
-                  </div>
-                  <div class="mk-hero">
-                    <div>
-                      <span class="mk-tag">Детейлинг-центр</span>
-                      <div class="mk-h1">Премиальный уход <span>за вашим авто</span></div>
-                      <p class="mk-p">Полировка, керамика, химчистка и защита кузова.</p>
-                      <span class="mk-cta">Записаться на детейлинг</span>
-                    </div>
-                    <div class="mk-visual">
-                      <svg viewBox="0 0 120 62" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M6 45 L11 30 L28 30 L40 17 L76 17 L88 30 L112 34 L114 45 Z"/>
-                        <circle cx="31" cy="45" r="7"/>
-                        <circle cx="91" cy="45" r="7"/>
-                        <path d="M40 30 L76 30" opacity=".5"/>
-                      </svg>
-                    </div>
-                  </div>
-                  <div class="shot__row">
-                    <div class="shot__cell"><b>01</b>Полировка</div>
-                    <div class="shot__cell"><b>02</b>Керамика</div>
-                    <div class="shot__cell"><b>03</b>Химчистка</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="project__meta">
-            <div class="project__info">
-              <h3 class="project__title">Blackline Detailing</h3>
-              <span class="project__cat">Детейлинг / Автосервис</span>
-            </div>
-            <div class="project__tags">
-              <span class="tag">UI Design</span>
-              <span class="tag">Development</span>
-              <span class="tag">Concept project</span>
-            </div>
-            <span class="project__arrow" aria-hidden="true">
-              <svg class="ico"><use href="#i-arrow"/></svg>
-            </span>
-          </div>
-
-          <div class="project__cta-wrap">
-            <a class="project__cta"
-               href="https://lesikpatrakov-pixel.github.io/pokaz4/"
-               target="_blank"
-               rel="noopener noreferrer">
-              Посмотреть проект
-              <svg class="ico" aria-hidden="true"><use href="#i-external"/></svg>
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- PROJECT 02 — NOVA INTERIOR -->
-      <article class="project reveal">
-        <div class="project__link">
-          <div class="project__visual">
-            <span class="project__badge">Concept project</span>
-            <div class="project__shot">
-              <div class="shot shot--dompro">
-                <div class="shot__bar">
-                  <span class="shot__dot"></span><span class="shot__dot"></span><span class="shot__dot"></span>
-                  <span class="shot__url">nova-interior.ru</span>
-                </div>
-                <div class="shot__body">
-                  <div class="mk-nav">
-                    <span class="mk-logo">NOVA<span> INTERIOR</span></span>
-                    <span class="mk-links"><span>Проекты</span><span>Услуги</span></span>
-                    <span class="mk-btn">Обсудить</span>
-                  </div>
-                  <div class="mk-hero">
-                    <div>
-                      <span class="mk-tag">Ремонт квартир</span>
-                      <div class="mk-h1">Ремонт <span>под ключ</span></div>
-                      <p class="mk-p">Дизайн-проект, отделка и комплектация.</p>
-                      <span class="mk-cta" style="border-color:rgba(0,0,0,.25);color:#111">Смотреть проекты</span>
-                    </div>
-                    <div class="mk-visual">
-                      <svg viewBox="0 0 120 62" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 50 V26 L44 10 L76 26 V50 Z"/>
-                        <path d="M34 50 V36 H54 V50"/>
-                        <path d="M84 50 V34 L104 24 L104 50 Z"/>
-                      </svg>
-                    </div>
-                  </div>
-                  <div class="shot__row" style="display:grid;grid-template-columns:repeat(3,1fr);gap:.8em;margin-top:1.4em">
-                    <div class="mk-card"><b style="color:#111">01</b>Дизайн</div>
-                    <div class="mk-card"><b style="color:#111">02</b>Ремонт</div>
-                    <div class="mk-card"><b style="color:#111">03</b>Мебель</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="project__meta">
-            <div class="project__info">
-              <h3 class="project__title">Nova Interior</h3>
-              <span class="project__cat">Ремонт / Интерьер</span>
-            </div>
-            <div class="project__tags">
-              <span class="tag">UI Design</span>
-              <span class="tag">Development</span>
-              <span class="tag">Concept project</span>
-            </div>
-            <span class="project__arrow" aria-hidden="true">
-              <svg class="ico"><use href="#i-arrow"/></svg>
-            </span>
-          </div>
-
-          <div class="project__cta-wrap">
-            <a class="project__cta"
-               href="https://lesikpatrakov-pixel.github.io/pokaz3/"
-               target="_blank"
-               rel="noopener noreferrer">
-              Посмотреть проект
-              <svg class="ico" aria-hidden="true"><use href="#i-external"/></svg>
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- PROJECT 03 — BLACK CUT -->
-      <article class="project reveal">
-        <div class="project__link">
-          <div class="project__visual">
-            <span class="project__badge">Concept project</span>
-            <div class="project__shot">
-              <div class="shot shot--blackcut">
-                <div class="shot__bar">
-                  <span class="shot__dot"></span><span class="shot__dot"></span><span class="shot__dot"></span>
-                  <span class="shot__url">blackcut.ru</span>
-                </div>
-                <div class="shot__body">
-                  <div class="mk-nav">
-                    <span class="mk-logo">BLACK<span> CUT</span></span>
-                    <span class="mk-links"><span>Услуги</span><span>Мастера</span></span>
-                    <span class="mk-btn">Записаться</span>
-                  </div>
-                  <div class="shot__big">Барбершоп<br><em>нового формата</em></div>
-                  <div class="shot__chips">
-                    <span>Стрижка</span>
-                    <span>Борода</span>
-                    <span>Бритьё</span>
-                  </div>
-                  <div class="shot__stripe"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="project__meta">
-            <div class="project__info">
-              <h3 class="project__title">Black Cut</h3>
-              <span class="project__cat">Барбершоп</span>
-            </div>
-            <div class="project__tags">
-              <span class="tag">Branding</span>
-              <span class="tag">UI Design</span>
-              <span class="tag">Concept project</span>
-            </div>
-            <span class="project__arrow" aria-hidden="true">
-              <svg class="ico"><use href="#i-arrow"/></svg>
-            </span>
-          </div>
-
-          <div class="project__cta-wrap">
-            <a class="project__cta"
-               href="https://lesikpatrakov-pixel.github.io/pokaz2/"
-               target="_blank"
-               rel="noopener noreferrer">
-              Посмотреть проект
-              <svg class="ico" aria-hidden="true"><use href="#i-external"/></svg>
-            </a>
-          </div>
-        </div>
-      </article>
-
-    </div>
-
-    <div class="carousel-dots" id="carouselDots" aria-hidden="true">
-      <button type="button" class="is-active" aria-label="Проект 1"></button>
-      <button type="button" aria-label="Проект 2"></button>
-      <button type="button" aria-label="Проект 3"></button>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PROCESS ============ -->
-<section class="section" id="process">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">How we work</span>
-      <h2 class="h2">От идеи до запуска</h2>
-    </div>
-
-    <div class="process__track" data-stagger>
-      <div class="step reveal">
-        <div class="step__dot">01</div>
-        <h3 class="step__title">Заявка</h3>
-        <p class="step__text">Рассказываете о бизнесе и задаче.</p>
-      </div>
-      <div class="step reveal">
-        <div class="step__dot">02</div>
-        <h3 class="step__title">Анализ</h3>
-        <p class="step__text">Определяем цели, структуру и необходимый функционал.</p>
-      </div>
-      <div class="step reveal">
-        <div class="step__dot">03</div>
-        <h3 class="step__title">Дизайн</h3>
-        <p class="step__text">Создаём визуальную концепцию и интерфейс.</p>
-      </div>
-      <div class="step reveal">
-        <div class="step__dot">04</div>
-        <h3 class="step__title">Разработка</h3>
-        <p class="step__text">Превращаем дизайн в полноценный работающий сайт.</p>
-      </div>
-      <div class="step reveal">
-        <div class="step__dot">05</div>
-        <h3 class="step__title">Проверка</h3>
-        <p class="step__text">Проверяем адаптивность, формы, ссылки и основные сценарии.</p>
-      </div>
-      <div class="step reveal">
-        <div class="step__dot">06</div>
-        <h3 class="step__title">Запуск</h3>
-        <p class="step__text">Подключаем домен, размещаем сайт и передаём проект.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ WHY ============ -->
-<section class="section section--tight" id="why">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">Why us</span>
-      <h2 class="h2">Почему Skilon</h2>
+      <span class="eyebrow">Почему мы</span>
+      <h2 class="h2">Почему с нами<br>удобно работать</h2>
     </div>
 
     <div class="grid grid--4" data-stagger>
       <article class="why reveal">
-        <span class="why__bar"></span>
-        <h3 class="why__title">Чистый дизайн</h3>
-        <p class="why__text">Минималистичный интерфейс без визуального мусора.</p>
+        <span class="why__num">01</span>
+        <h3 class="why__title">Прямое общение</h3>
+        <p class="why__text">Вы общаетесь непосредственно с человеком, который работает над проектом.</p>
       </article>
       <article class="why reveal">
-        <span class="why__bar"></span>
-        <h3 class="why__title">Под задачу</h3>
-        <p class="why__text">Каждый сайт создаётся под конкретный бизнес и его аудиторию.</p>
+        <span class="why__num">02</span>
+        <h3 class="why__title">Понятный процесс</h3>
+        <p class="why__text">Вы знаете, что происходит на каждом этапе разработки.</p>
       </article>
       <article class="why reveal">
-        <span class="why__bar"></span>
-        <h3 class="why__title">Адаптивность</h3>
-        <p class="why__text">Сайт корректно работает на компьютерах, планшетах и смартфонах.</p>
+        <span class="why__num">03</span>
+        <h3 class="why__title">Без лишнего</h3>
+        <p class="why__text">Не перегружаем проект ненужными функциями и предлагаем решения под конкретную задачу.</p>
       </article>
       <article class="why reveal">
-        <span class="why__bar"></span>
-        <h3 class="why__title">Под ключ</h3>
+        <span class="why__num">04</span>
+        <h3 class="why__title">Сайт под ключ</h3>
         <p class="why__text">От структуры и дизайна до публикации готового сайта.</p>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ============ PRICING ============ -->
+<!-- PROCESS -->
+<section class="section" id="process">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Процесс</span>
+      <h2 class="h2">От идеи до запуска</h2>
+      <p class="lead">Понятный процесс без скрытых этапов. Вы всегда знаете, что происходит и что дальше.</p>
+    </div>
+
+    <div class="process__track" data-stagger>
+      <div class="step reveal">
+        <div class="step__dot">01</div>
+        <h3 class="step__title">Заявка</h3>
+        <p class="step__text">Обсуждаем задачу и цели проекта.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step__dot">02</div>
+        <h3 class="step__title">Структура</h3>
+        <p class="step__text">Определяем страницы, блоки и необходимый функционал.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step__dot">03</div>
+        <h3 class="step__title">Дизайн</h3>
+        <p class="step__text">Создаём визуальную концепцию сайта.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step__dot">04</div>
+        <h3 class="step__title">Разработка</h3>
+        <p class="step__text">Собираем сайт и адаптируем его под устройства.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step__dot">05</div>
+        <h3 class="step__title">Запуск</h3>
+        <p class="step__text">Подключаем домен, проверяем сайт и публикуем.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step__dot">06</div>
+        <h3 class="step__title">Поддержка</h3>
+        <p class="step__text">После запуска помогаем с дальнейшими изменениями и развитием.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="section section--tight" id="results">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Результат</span>
+      <h2 class="h2">Что вы получаете</h2>
+      <p class="lead">Всё, что входит в базовую работу над проектом — независимо от выбранного тарифа.</p>
+    </div>
+
+    <div class="get reveal">
+      <div class="get__item">
+        <span class="get__check"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg></span>
+        <span>Современный дизайн</span>
+      </div>
+      <div class="get__item">
+        <span class="get__check"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg></span>
+        <span>Адаптив под смартфоны</span>
+      </div>
+      <div class="get__item">
+        <span class="get__check"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg></span>
+        <span>Понятную структуру</span>
+      </div>
+      <div class="get__item">
+        <span class="get__check"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg></span>
+        <span>Формы заявок</span>
+      </div>
+      <div class="get__item">
+        <span class="get__check"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg></span>
+        <span>Кнопки связи</span>
+      </div>
+      <div class="get__item">
+        <span class="get__check"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg></span>
+        <span>Необходимые интеграции</span>
+      </div>
+      <div class="get__item">
+        <span class="get__check"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg></span>
+        <span>Базовую SEO-настройку</span>
+      </div>
+      <div class="get__item">
+        <span class="get__check"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg></span>
+        <span>Подключение домена</span>
+      </div>
+      <div class="get__item">
+        <span class="get__check"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg></span>
+        <span>Публикацию сайта</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
 <section class="section" id="pricing">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">Pricing</span>
+      <span class="eyebrow">Цены</span>
       <h2 class="h2">Понятные цены</h2>
-      <p class="lead">Стоимость зависит от задачи и необходимого функционала.</p>
+      <p class="lead">Выберите тариф, который подходит под задачу. Итоговая стоимость зависит от структуры и функционала.</p>
     </div>
 
     <div class="pricing__grid" data-stagger>
 
       <article class="plan reveal">
         <span class="plan__name">Start</span>
-        <div class="plan__price">19 900 ₽</div>
-        <p class="plan__note">Одностраничный сайт</p>
+        <div class="plan__price">от 19 900 ₽</div>
+        <p class="plan__for">Для небольшой компании, услуги или одного направления.</p>
         <ul class="plan__list">
           <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Одностраничный сайт</li>
           <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Адаптивный дизайн</li>
           <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Форма заявки</li>
-          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Контакты</li>
-          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Карта</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Контакты и карта</li>
           <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Базовая SEO-настройка</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Публикация</li>
         </ul>
         <div class="plan__cta">
-          <button class="btn btn--ghost btn--block" type="button" data-modal-open data-budget="до 30 000 ₽">
-            Выбрать START
+          <button class="btn btn--ghost btn--block" type="button" data-modal-open data-budget="До 20 000 ₽" data-service="Start" data-cta="pricing_cta">
+            Выбрать Start
             <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
           </button>
         </div>
@@ -1841,19 +2178,18 @@ ul{margin:0;padding:0;list-style:none}
       <article class="plan plan--featured reveal">
         <span class="plan__badge">Популярный</span>
         <span class="plan__name">Business</span>
-        <div class="plan__price">39 900 ₽</div>
-        <p class="plan__note">Сайт компании</p>
+        <div class="plan__price">от 39 900 ₽</div>
+        <p class="plan__for">Для полноценного сайта компании.</p>
         <ul class="plan__list">
           <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>До 7 страниц</li>
           <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Индивидуальный дизайн</li>
-          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Адаптивность</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Адаптив под устройства</li>
           <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Формы заявок</li>
-          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Интеграции</li>
-          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Аналитика</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Интеграции и аналитика</li>
           <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Базовая SEO-настройка</li>
         </ul>
         <div class="plan__cta">
-          <button class="btn btn--primary btn--block" type="button" data-modal-open data-budget="30–50 000 ₽">
+          <button class="btn btn--primary btn--block" type="button" data-modal-open data-budget="20 000–40 000 ₽" data-service="Business" data-cta="pricing_cta">
             Обсудить проект
             <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
           </button>
@@ -1863,18 +2199,17 @@ ul{margin:0;padding:0;list-style:none}
       <article class="plan reveal">
         <span class="plan__name">Pro</span>
         <div class="plan__price">от 69 900 ₽</div>
-        <p class="plan__note">Сложный проект</p>
+        <p class="plan__for">Для сложных проектов с большим количеством страниц и функционала.</p>
         <ul class="plan__list">
           <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Сложный дизайн</li>
-          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Каталог</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Каталог и фильтры</li>
           <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Дополнительный функционал</li>
-          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Интеграции</li>
-          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Аналитика</li>
-          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>SEO</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Интеграции и аналитика</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Расширенная SEO-настройка</li>
           <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Поддержка запуска</li>
         </ul>
         <div class="plan__cta">
-          <button class="btn btn--ghost btn--block" type="button" data-modal-open data-budget="100 000 ₽+">
+          <button class="btn btn--ghost btn--block" type="button" data-modal-open data-budget="70 000 ₽+" data-service="Pro" data-cta="pricing_cta">
             Рассчитать стоимость
             <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
           </button>
@@ -1882,13 +2217,118 @@ ul{margin:0;padding:0;list-style:none}
       </article>
 
     </div>
+
+    <p class="pricing__note reveal">
+      Итоговая стоимость зависит от структуры, количества страниц и необходимого функционала.
+    </p>
   </div>
 </section>
 
-<!-- ============ FAQ ============ -->
-<section class="section section--tight" id="faq">
+<!-- CALCULATOR -->
+<section class="section section--tight" id="calculator">
   <div class="container">
     <div class="section-head reveal">
+      <span class="eyebrow">Калькулятор</span>
+      <h2 class="h2">Рассчитать проект</h2>
+      <p class="lead">Ответьте на несколько вопросов — увидите предварительную стоимость.</p>
+    </div>
+
+    <div class="calc reveal" id="calc">
+      <div class="calc__col">
+
+        <div class="calc__group">
+          <span class="calc__label">Тип сайта</span>
+          <div class="calc__options">
+            <label class="calc__opt">
+              <input type="radio" name="calc-type" value="landing" checked>
+              <span>Landing</span>
+            </label>
+            <label class="calc__opt">
+              <input type="radio" name="calc-type" value="business">
+              <span>Business</span>
+            </label>
+            <label class="calc__opt">
+              <input type="radio" name="calc-type" value="ecommerce">
+              <span>E-commerce</span>
+            </label>
+            <label class="calc__opt">
+              <input type="radio" name="calc-type" value="redesign">
+              <span>Redesign</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="calc__group">
+          <span class="calc__label">Количество страниц</span>
+          <div class="calc__options">
+            <label class="calc__opt">
+              <input type="radio" name="calc-pages" value="1" checked>
+              <span>1 страница</span>
+            </label>
+            <label class="calc__opt">
+              <input type="radio" name="calc-pages" value="5">
+              <span>до 5</span>
+            </label>
+            <label class="calc__opt">
+              <input type="radio" name="calc-pages" value="10">
+              <span>до 10</span>
+            </label>
+            <label class="calc__opt">
+              <input type="radio" name="calc-pages" value="20">
+              <span>10+</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="calc__group">
+          <span class="calc__label">Дополнительно</span>
+          <div class="calc__options">
+            <label class="calc__opt">
+              <input type="checkbox" name="calc-extra" value="form" checked>
+              <span>Форма заявки</span>
+            </label>
+            <label class="calc__opt">
+              <input type="checkbox" name="calc-extra" value="telegram">
+              <span>Telegram / WhatsApp</span>
+            </label>
+            <label class="calc__opt">
+              <input type="checkbox" name="calc-extra" value="booking">
+              <span>Онлайн-запись</span>
+            </label>
+            <label class="calc__opt">
+              <input type="checkbox" name="calc-extra" value="catalog">
+              <span>Каталог товаров</span>
+            </label>
+            <label class="calc__opt">
+              <input type="checkbox" name="calc-extra" value="seo">
+              <span>Расширенное SEO</span>
+            </label>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="calc__result">
+        <span class="calc__result-label">Предварительная стоимость</span>
+        <div class="calc__result-price" id="calcPrice">от 19 900 ₽</div>
+        <p class="calc__result-note">
+          Предварительный расчёт. Точная стоимость определяется после обсуждения проекта.
+        </p>
+        <div class="calc__result-cta">
+          <button class="btn btn--primary btn--block" type="button" data-modal-open data-cta="calculator_cta">
+            Обсудить проект
+            <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
       <span class="eyebrow">FAQ</span>
       <h2 class="h2">Частые вопросы</h2>
     </div>
@@ -1922,23 +2362,70 @@ ul{margin:0;padding:0;list-style:none}
 
       <div class="faq-item">
         <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-3">
-          Нужно ли мне покупать домен?
+          Можно ли посмотреть дизайн до разработки?
           <span class="faq-q__icon" aria-hidden="true"><svg class="ico"><use href="#i-plus"/></svg></span>
         </button>
         <div class="faq-a" id="faq-a-3" role="region">
           <div class="faq-a__inner">
-            Домен и хостинг можно подключить самостоятельно или мы поможем подготовить
-            всё необходимое для запуска.
+            Да. Сначала согласовываем структуру и визуальную концепцию, и только потом начинаем разработку.
           </div>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-4">
-          Можно ли потом изменить сайт?
+          Что нужно предоставить для создания сайта?
           <span class="faq-q__icon" aria-hidden="true"><svg class="ico"><use href="#i-plus"/></svg></span>
         </button>
         <div class="faq-a" id="faq-a-4" role="region">
+          <div class="faq-a__inner">
+            Описание услуг, контакты, логотип (если есть), фотографии и пожелания. Остальное поможем собрать в процессе.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-5">
+          Нужно ли покупать домен?
+          <span class="faq-q__icon" aria-hidden="true"><svg class="ico"><use href="#i-plus"/></svg></span>
+        </button>
+        <div class="faq-a" id="faq-a-5" role="region">
+          <div class="faq-a__inner">
+            Домен и хостинг можно подключить самостоятельно или мы поможем подготовить всё необходимое для запуска.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-6">
+          Можно ли подключить Telegram / WhatsApp?
+          <span class="faq-q__icon" aria-hidden="true"><svg class="ico"><use href="#i-plus"/></svg></span>
+        </button>
+        <div class="faq-a" id="faq-a-6" role="region">
+          <div class="faq-a__inner">
+            Да. Можем подключить кнопки связи и отправку заявок в Telegram или WhatsApp.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-7">
+          Можно ли сделать онлайн-запись?
+          <span class="faq-q__icon" aria-hidden="true"><svg class="ico"><use href="#i-plus"/></svg></span>
+        </button>
+        <div class="faq-a" id="faq-a-7" role="region">
+          <div class="faq-a__inner">
+            Да. Для салонов, автосервисов и специалистов можем подключить форму онлайн-записи.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-8">
+          Можно ли потом изменить сайт?
+          <span class="faq-q__icon" aria-hidden="true"><svg class="ico"><use href="#i-plus"/></svg></span>
+        </button>
+        <div class="faq-a" id="faq-a-8" role="region">
           <div class="faq-a__inner">
             Да. После запуска можно добавлять новые блоки, страницы и функциональность.
           </div>
@@ -1946,13 +2433,25 @@ ul{margin:0;padding:0;list-style:none}
       </div>
 
       <div class="faq-item">
-        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-5">
-          Есть ли поддержка?
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-9">
+          Есть ли поддержка после запуска?
           <span class="faq-q__icon" aria-hidden="true"><svg class="ico"><use href="#i-plus"/></svg></span>
         </button>
-        <div class="faq-a" id="faq-a-5" role="region">
+        <div class="faq-a" id="faq-a-9" role="region">
           <div class="faq-a__inner">
-            Да, можем продолжить техническое сопровождение после запуска.
+            Да, можем продолжить техническое сопровождение после запуска — от небольших правок до развития.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a-10">
+          Как происходит оплата?
+          <span class="faq-q__icon" aria-hidden="true"><svg class="ico"><use href="#i-plus"/></svg></span>
+        </button>
+        <div class="faq-a" id="faq-a-10" role="region">
+          <div class="faq-a__inner">
+            Обычно оплата делится на две части: предоплата за старт работы и остаток — после готовности проекта. Детали обсуждаем индивидуально.
           </div>
         </div>
       </div>
@@ -1961,19 +2460,25 @@ ul{margin:0;padding:0;list-style:none}
   </div>
 </section>
 
-<!-- ============ CTA ============ -->
+<!-- FINAL CTA -->
 <section class="cta" id="cta">
   <div class="container">
     <div class="cta__inner reveal">
-      <h2 class="cta__title">Есть идея?<br>Давайте её<br>запустим.</h2>
+      <h2 class="cta__title">Вашему бизнесу<br>нужен сайт?</h2>
       <p class="cta__text">
-        Расскажите о вашем бизнесе — мы предложим структуру, подход
-        и предварительную стоимость проекта.
+        Расскажите, чем занимается ваша компания. Мы предложим структуру проекта
+        и предварительно оценим стоимость.
       </p>
-      <button class="btn btn--primary btn--lg" type="button" data-modal-open>
-        Обсудить проект
-        <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
-      </button>
+      <div class="cta__actions">
+        <button class="btn btn--primary btn--lg" type="button" data-modal-open data-cta="final_cta">
+          Обсудить проект
+          <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </button>
+        <a class="btn btn--ghost btn--lg" href="#works" data-cta="final_secondary">
+          Посмотреть работы
+          <svg class="ico" aria-hidden="true"><use href="#i-arrow-down"/></svg>
+        </a>
+      </div>
       <span class="cta__note">Ответим в течение рабочего дня</span>
     </div>
   </div>
@@ -1981,7 +2486,7 @@ ul{margin:0;padding:0;list-style:none}
 
 </main>
 
-<!-- ============ FOOTER ============ -->
+<!-- FOOTER -->
 <footer class="footer" id="contacts">
   <div class="container">
     <div class="footer__grid">
@@ -1991,7 +2496,7 @@ ul{margin:0;padding:0;list-style:none}
           <span class="logo__main">SKILON</span>
           <span class="logo__sub">WEB</span>
         </a>
-        <p class="footer__tagline">Digital studio for modern business.</p>
+        <p class="footer__tagline">Создание сайтов под ключ для бизнеса.</p>
       </div>
 
       <nav class="footer__col" aria-label="Навигация в подвале">
@@ -2001,6 +2506,7 @@ ul{margin:0;padding:0;list-style:none}
           <a href="#works">Работы</a>
           <a href="#process">Процесс</a>
           <a href="#pricing">Цены</a>
+          <a href="#faq">FAQ</a>
           <a href="#contacts">Контакты</a>
         </div>
       </nav>
@@ -2008,7 +2514,7 @@ ul{margin:0;padding:0;list-style:none}
       <div class="footer__col">
         <span class="footer__title">Связаться</span>
         <div class="footer__links">
-          <a href="https://t.me/" target="_blank" rel="noopener noreferrer">Telegram</a>
+          <a href="https://t.me/" target="_blank" rel="noopener noreferrer" data-cta="telegram_click">Telegram</a>
           <a href="https://vk.com/" target="_blank" rel="noopener noreferrer">VK</a>
           <a href="mailto:hello@skilonweb.ru">Email</a>
         </div>
@@ -2023,7 +2529,15 @@ ul{margin:0;padding:0;list-style:none}
   </div>
 </footer>
 
-<!-- ============ MODAL ============ -->
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta" id="stickyCta" aria-hidden="true">
+  <button class="btn btn--primary" type="button" data-modal-open data-cta="sticky_cta">
+    Обсудить проект
+    <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+  </button>
+</div>
+
+<!-- MODAL -->
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
   <div class="modal__panel" role="document">
     <button class="modal__close" type="button" data-modal-close aria-label="Закрыть окно">
@@ -2054,8 +2568,8 @@ ul{margin:0;padding:0;list-style:none}
 
       <div class="field">
         <label for="f-contact">Телефон / Telegram *</label>
-        <input type="text" id="f-contact" name="phone" placeholder="Как с вами связаться? 8*********" autocomplete="tel" required>
-        <span class="field__error">Оставьте телефон  или Telegram</span>
+        <input type="text" id="f-contact" name="phone" placeholder="+7 999 000-00-00 или @username" autocomplete="tel" required>
+        <span class="field__error">Оставьте телефон или Telegram</span>
       </div>
 
       <div class="field">
@@ -2065,33 +2579,23 @@ ul{margin:0;padding:0;list-style:none}
       </div>
 
       <div class="field">
-        <label id="budgetLabel">Примерный бюджет</label>
-        <div class="chips" role="radiogroup" aria-labelledby="budgetLabel">
-          <label class="chip">
-            <input type="radio" name="budget" value="до 30 000 ₽">
-            <span>до 30 000 ₽</span>
-          </label>
-          <label class="chip">
-            <input type="radio" name="budget" value="30–50 000 ₽">
-            <span>30–50 000 ₽</span>
-          </label>
-          <label class="chip">
-            <input type="radio" name="budget" value="50–100 000 ₽">
-            <span>50–100 000 ₽</span>
-          </label>
-          <label class="chip">
-            <input type="radio" name="budget" value="100 000 ₽+">
-            <span>100 000 ₽+</span>
-          </label>
-        </div>
+        <label for="f-budget">Примерный бюджет</label>
+        <select id="f-budget" name="budget">
+          <option value="">Выберите вариант</option>
+          <option value="До 20 000 ₽">До 20 000 ₽</option>
+          <option value="20 000–40 000 ₽">20 000–40 000 ₽</option>
+          <option value="40 000–70 000 ₽">40 000–70 000 ₽</option>
+          <option value="70 000 ₽+">70 000 ₽+</option>
+          <option value="Пока не определился">Пока не определился</option>
+        </select>
       </div>
 
       <div class="form__foot">
         <div class="form__error-banner" id="formError" role="alert"></div>
 
-        <button class="btn btn--primary btn--lg btn--block" type="submit" id="submitBtn">
+        <button class="btn btn--primary btn--lg btn--block" type="submit" id="submitBtn" data-cta="form_submit">
           <span id="submitBtnText">Отправить заявку</span>
-          <svg class="ico" aria-hidden="true" id="submitBtnIcon"><use href="#i-arrow"/></svg>
+          <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
         </button>
         <p class="form__note">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
       </div>
@@ -2101,9 +2605,15 @@ ul{margin:0;padding:0;list-style:none}
       <span class="success__icon" aria-hidden="true">
         <svg class="ico"><use href="#i-check"/></svg>
       </span>
-      <h3 class="success__title">Заявка отправлена</h3>
-      <p class="success__text">Спасибо! Заявка отправлена. Мы свяжемся с вами в ближайшее время.</p>
-      <button class="btn btn--ghost" type="button" data-modal-close>Закрыть</button>
+      <h3 class="success__title">Заявка получена</h3>
+      <p class="success__text">Мы изучим задачу и свяжемся с вами в течение рабочего дня.</p>
+      <div class="success__actions">
+        <a class="btn btn--ghost" href="https://t.me/" target="_blank" rel="noopener noreferrer" data-cta="telegram_click">
+          <svg class="ico" aria-hidden="true"><use href="#i-telegram"/></svg>
+          Написать в Telegram
+        </a>
+        <button class="btn btn--ghost" type="button" data-modal-close>Закрыть</button>
+      </div>
     </div>
   </div>
 </div>
@@ -2115,15 +2625,48 @@ ul{margin:0;padding:0;list-style:none}
   'use strict';
 
   /* =========================================================
-     GOOGLE APPS SCRIPT ENDPOINT
+     КОНФИГ
      ========================================================= */
   var GAS_URL = 'https://script.google.com/macros/s/AKfycbzlnXeQXNI-tfvuIr6052xFFXyAXTNj5jZ3c8weKM3M-2j9RWIYkhz3w6ZC4cvvekpz/exec';
 
   var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------------------------------------------------------
+  /* =========================================================
+     АНАЛИТИКА — точка подключения
+     ---------------------------------------------------------
+     Все CTA в HTML имеют data-cta="..." с одним из значений:
+       hero_cta, portfolio_cta, pricing_cta, calculator_cta,
+       final_cta, form_submit, telegram_click, header_cta,
+       mobile_menu_cta, service_cta, showcase_cta, sticky_cta
+     Здесь единая функция — сюда позже подключается
+     Яндекс.Метрика / Google Analytics / VK Pixel.
+     ========================================================= */
+  function trackEvent(name, params) {
+    // Пример для Яндекс.Метрики (раскомментировать, когда счётчик установлен):
+    // if (typeof window.ym === 'function' && window.YM_COUNTER_ID) {
+    //   window.ym(window.YM_COUNTER_ID, 'reachGoal', name, params || {});
+    // }
+    // Пример для GA4:
+    // if (typeof window.gtag === 'function') {
+    //   window.gtag('event', name, params || {});
+    // }
+    if (window.console && console.debug) {
+      console.debug('[CTA]', name, params || {});
+    }
+  }
+
+  // Делегирование: любые клики по [data-cta]
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-cta]');
+    if (!el) return;
+    trackEvent(el.getAttribute('data-cta'), {
+      label: (el.textContent || '').trim().slice(0, 60)
+    });
+  }, true);
+
+  /* =========================================================
      HEADER: scroll state
-     --------------------------------------------------------- */
+     ========================================================= */
   var header = document.getElementById('header');
   function updateHeader() {
     header.classList.toggle('is-scrolled', window.scrollY > 12);
@@ -2131,9 +2674,9 @@ ul{margin:0;padding:0;list-style:none}
   updateHeader();
   window.addEventListener('scroll', updateHeader, { passive: true });
 
-  /* ---------------------------------------------------------
-     REVEAL ANIMATIONS
-     --------------------------------------------------------- */
+  /* =========================================================
+     REVEAL
+     ========================================================= */
   var reveals = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
 
   if (prefersReduced || !('IntersectionObserver' in window)) {
@@ -2164,9 +2707,9 @@ ul{margin:0;padding:0;list-style:none}
     }, true);
   }
 
-  /* ---------------------------------------------------------
+  /* =========================================================
      MOBILE MENU
-     --------------------------------------------------------- */
+     ========================================================= */
   var burger = document.getElementById('burger');
   var mobileMenu = document.getElementById('mobileMenu');
 
@@ -2197,9 +2740,9 @@ ul{margin:0;padding:0;list-style:none}
     if (window.innerWidth > 980 && mobileMenu.classList.contains('is-open')) closeMenu();
   });
 
-  /* ---------------------------------------------------------
+  /* =========================================================
      ACTIVE NAV LINK
-     --------------------------------------------------------- */
+     ========================================================= */
   var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
   var sections = navLinks
     .map(function (a) { return document.querySelector(a.getAttribute('href')); })
@@ -2218,9 +2761,9 @@ ul{margin:0;padding:0;list-style:none}
     sections.forEach(function (s) { navIO.observe(s); });
   }
 
-  /* ---------------------------------------------------------
+  /* =========================================================
      FAQ ACCORDION
-     --------------------------------------------------------- */
+     ========================================================= */
   var faqItems = Array.prototype.slice.call(document.querySelectorAll('.faq-item'));
 
   function closeFaq(item) {
@@ -2256,14 +2799,13 @@ ul{margin:0;padding:0;list-style:none}
     });
   });
 
-  /* ---------------------------------------------------------
+  /* =========================================================
      MODAL
-     --------------------------------------------------------- */
+     ========================================================= */
   var modal = document.getElementById('modal');
   var form = document.getElementById('contactForm');
   var success = document.getElementById('formSuccess');
   var taskField = document.getElementById('f-task');
-  var serviceField = document.getElementById('f-service');
   var errorBanner = document.getElementById('formError');
   var submitBtn = document.getElementById('submitBtn');
   var submitBtnText = document.getElementById('submitBtnText');
@@ -2279,7 +2821,7 @@ ul{margin:0;padding:0;list-style:none}
       errorBanner.classList.remove('is-visible');
       errorBanner.textContent = '';
     }
-    if (serviceField) serviceField.value = '';
+    if (form.elements['service']) form.elements['service'].value = '';
     if (submitBtn) submitBtn.disabled = false;
     if (submitBtnText) submitBtnText.textContent = 'Отправить заявку';
     isSubmitting = false;
@@ -2288,18 +2830,38 @@ ul{margin:0;padding:0;list-style:none}
   function openModal(trigger) {
     lastFocused = document.activeElement;
 
+    var serviceInput = form.elements['service'];
+    if (serviceInput) serviceInput.value = '';
+
     var service = trigger && trigger.getAttribute('data-service');
     var budget = trigger && trigger.getAttribute('data-budget');
 
-    if (service) {
-      if (serviceField) serviceField.value = service;
-      if (!taskField.value.trim()) {
+    if (service && serviceInput) {
+      serviceInput.value = service;
+      if (taskField && !taskField.value.trim()) {
         taskField.value = 'Интересует: ' + service;
       }
     }
+
     if (budget) {
-      var radio = form.querySelector('input[name="budget"][value="' + budget + '"]');
-      if (radio) radio.checked = true;
+      var select = document.getElementById('f-budget');
+      if (select) {
+        // Пытаемся найти option с подходящим value
+        var found = false;
+        Array.prototype.forEach.call(select.options, function (opt) {
+          if (opt.value === budget) { select.value = budget; found = true; }
+        });
+        if (!found && select.options.length > 0) {
+          // Мягкий маппинг для старых формулировок
+          var map = {
+            'до 30 000 ₽': 'До 20 000 ₽',
+            '30–50 000 ₽': '20 000–40 000 ₽',
+            '50–100 000 ₽': '40 000–70 000 ₽',
+            '100 000 ₽+': '70 000 ₽+'
+          };
+          if (map[budget]) select.value = map[budget];
+        }
+      }
     }
 
     modal.classList.add('is-open');
@@ -2307,7 +2869,7 @@ ul{margin:0;padding:0;list-style:none}
     document.body.classList.add('is-locked');
 
     setTimeout(function () {
-      var first = modal.querySelector('input, textarea, button');
+      var first = modal.querySelector('input, textarea, select, button');
       if (first) first.focus({ preventScroll: true });
     }, 60);
   }
@@ -2342,7 +2904,7 @@ ul{margin:0;padding:0;list-style:none}
 
     if (e.key === 'Tab' && modal.classList.contains('is-open')) {
       var focusables = modal.querySelectorAll(
-        'a[href], button:not([disabled]), input:not([disabled]), textarea, select, [tabindex]:not([tabindex="-1"])'
+        'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
       );
       var list = Array.prototype.filter.call(focusables, function (el) {
         return el.offsetParent !== null;
@@ -2361,9 +2923,9 @@ ul{margin:0;padding:0;list-style:none}
     }
   });
 
-  /* ---------------------------------------------------------
+  /* =========================================================
      FORM VALIDATION
-     --------------------------------------------------------- */
+     ========================================================= */
   function setError(input, hasError) {
     var field = input.closest('.field');
     if (field) field.classList.toggle('has-error', hasError);
@@ -2374,9 +2936,9 @@ ul{margin:0;padding:0;list-style:none}
     var ok = true;
 
     if (input.hasAttribute('required') && value.length === 0) ok = false;
-    if (ok && input.id === 'f-name' && value.length < 2) ok = false;
-    if (ok && input.id === 'f-contact' && value.length < 4) ok = false;
-    if (ok && input.id === 'f-task' && value.length < 5) ok = false;
+    if (ok && input.name === 'name'    && value.length < 2) ok = false;
+    if (ok && input.name === 'phone'   && value.length < 4) ok = false;
+    if (ok && input.name === 'message' && value.length < 5) ok = false;
 
     setError(input, !ok);
     return ok;
@@ -2389,9 +2951,9 @@ ul{margin:0;padding:0;list-style:none}
     });
   });
 
-  /* ---------------------------------------------------------
+  /* =========================================================
      SUBMIT → Google Apps Script
-     --------------------------------------------------------- */
+     ========================================================= */
   function setSubmitting(on) {
     isSubmitting = on;
     if (submitBtn) submitBtn.disabled = on;
@@ -2413,12 +2975,9 @@ ul{margin:0;padding:0;list-style:none}
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    // Защита от двойной отправки
     if (isSubmitting) return;
-
     clearError();
 
-    // Валидация
     var valid = true;
     var firstInvalid = null;
 
@@ -2434,122 +2993,146 @@ ul{margin:0;padding:0;list-style:none}
       return;
     }
 
-    // Собираем данные
-    var selectedBudget = '';
-    var checkedBudget = form.querySelector('input[name="budget"]:checked');
-    if (checkedBudget) selectedBudget = checkedBudget.value;
+    /* --- Сбор данных строго по name --- */
+    var elName    = form.elements['name'];
+    var elPhone   = form.elements['phone'];
+    var elCompany = form.elements['company'];
+    var elService = form.elements['service'];
+    var elBudget  = form.elements['budget'];
+    var elMessage = form.elements['message'];
 
     var payload = {
-      name: (document.getElementById('f-name').value || '').trim(),
-      phone: (document.getElementById('f-contact').value || '').trim(),
-      company: (document.getElementById('f-company').value || '').trim(),
-      service: (serviceField && serviceField.value || '').trim(),
-      budget: selectedBudget,
-      message: (document.getElementById('f-task').value || '').trim()
+      name:    elName    ? String(elName.value    || '').trim() : '',
+      phone:   elPhone   ? String(elPhone.value   || '').trim() : '',
+      company: elCompany ? String(elCompany.value || '').trim() : '',
+      service: elService ? String(elService.value || '').trim() : '',
+      budget:  elBudget  ? String(elBudget.value  || '').trim() : '',
+      message: elMessage ? String(elMessage.value || '').trim() : ''
     };
 
     setSubmitting(true);
-    clearError();
 
-    /* ---------------------------------------------------------
-       ОТПРАВКА В GOOGLE APPS SCRIPT
-       ---------------------------------------------------------
-       Важно: используем Content-Type: text/plain;charset=utf-8.
-       Это «простой» CORS-запрос без preflight (OPTIONS).
-       Google Apps Script Web App не отвечает на preflight,
-       поэтому application/json не работает из браузера.
-       GAS внутри парсит тело через JSON.parse(e.postData.contents).
-       --------------------------------------------------------- */
+    /* POST в GAS: Content-Type text/plain — чтобы не было CORS preflight */
     fetch(GAS_URL, {
       method: 'POST',
-      // ВАЖНО: text/plain, НЕ application/json — иначе CORS preflight падает
-      headers: {
-        'Content-Type': 'text/plain;charset=utf-8'
-      },
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
       body: JSON.stringify(payload),
       redirect: 'follow'
     })
       .then(function (response) {
-        if (!response.ok) {
-          throw new Error('HTTP ' + response.status);
-        }
-        // GAS может вернуть пустое тело или JSON — обрабатываем оба случая
+        if (!response.ok) throw new Error('HTTP ' + response.status);
         return response.text().then(function (text) {
           if (!text) return { ok: true };
-          try {
-            return JSON.parse(text);
-          } catch (err) {
-            // Не-JSON ответ (HTML и т.п.) — считаем успехом, если статус 200
-            return { ok: true };
-          }
+          try { return JSON.parse(text); }
+          catch (err) { return { ok: true }; }
         });
       })
       .then(function (data) {
-        // Если GAS вернул { ok: false, error: "..." } — показываем ошибку
         if (data && data.ok === false) {
           throw new Error(data.error || 'Ошибка на стороне сервера');
         }
-
-        // Успех
         setSubmitting(false);
         form.style.display = 'none';
         success.classList.add('is-visible');
-        var btn = success.querySelector('button');
+        trackEvent('form_submit_success', payload);
+        var btn = success.querySelector('button, a');
         if (btn) btn.focus({ preventScroll: true });
       })
-      .catch(function (err) {
-        // Ошибка — НЕ очищаем поля, показываем сообщение
+      .catch(function () {
         setSubmitting(false);
-        showError('Не удалось отправить заявку. Пожалуйста, попробуйте ещё раз или свяжитесь с нами напрямую в Telegram.');
-        // console.error('Form submit error:', err);
+        showError('Не удалось отправить заявку. Попробуйте ещё раз или свяжитесь с нами напрямую в Telegram.');
       });
   });
 
-  /* ---------------------------------------------------------
-     PORTFOLIO CAROUSEL DOTS
-     --------------------------------------------------------- */
-  var track = document.getElementById('portfolioTrack');
-  var dotsWrap = document.getElementById('carouselDots');
+  /* =========================================================
+     CALCULATOR
+     ========================================================= */
+  var calc = document.getElementById('calc');
+  if (calc) {
+    var priceEl = document.getElementById('calcPrice');
 
-  if (track && dotsWrap) {
-    var dots = Array.prototype.slice.call(dotsWrap.children);
-    var projects = Array.prototype.slice.call(track.children);
+    var basePrice = {
+      landing:   19900,
+      business:  39900,
+      ecommerce: 69900,
+      redesign:  15000
+    };
 
-    function syncDots() {
-      if (window.innerWidth > 768) return;
-      var center = track.scrollLeft + track.clientWidth / 2;
-      var closest = 0;
-      var min = Infinity;
+    var pagesMultiplier = {
+      '1':  1,
+      '5':  1.25,
+      '10': 1.6,
+      '20': 2.1
+    };
 
-      projects.forEach(function (p, i) {
-        var pc = p.offsetLeft + p.offsetWidth / 2;
-        var d = Math.abs(pc - center);
-        if (d < min) { min = d; closest = i; }
-      });
+    var extraPrice = {
+      form:     0,      // входит по умолчанию
+      telegram: 3000,
+      booking:  8000,
+      catalog:  12000,
+      seo:      7000
+    };
 
-      dots.forEach(function (d, i) { d.classList.toggle('is-active', i === closest); });
+    function formatPrice(n) {
+      var rounded = Math.round(n / 500) * 500;
+      return 'от ' + rounded.toLocaleString('ru-RU').replace(/,/g, ' ') + ' ₽';
     }
 
-    var raf = null;
-    track.addEventListener('scroll', function () {
-      if (raf) cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(syncDots);
-    }, { passive: true });
+    function recalc() {
+      var typeInput = calc.querySelector('input[name="calc-type"]:checked');
+      var pagesInput = calc.querySelector('input[name="calc-pages"]:checked');
 
-    dots.forEach(function (dot, i) {
-      dot.addEventListener('click', function () {
-        var p = projects[i];
-        if (p) {
-          track.scrollTo({
-            left: p.offsetLeft - (track.clientWidth - p.offsetWidth) / 2,
-            behavior: prefersReduced ? 'auto' : 'smooth'
-          });
-        }
+      var type = typeInput ? typeInput.value : 'landing';
+      var pages = pagesInput ? pagesInput.value : '1';
+
+      var total = basePrice[type] * pagesMultiplier[pages];
+
+      calc.querySelectorAll('input[name="calc-extra"]:checked').forEach(function (chk) {
+        total += extraPrice[chk.value] || 0;
       });
-    });
 
-    window.addEventListener('resize', syncDots);
-    syncDots();
+      priceEl.textContent = formatPrice(total);
+    }
+
+    calc.addEventListener('change', recalc);
+    recalc();
+  }
+
+  /* =========================================================
+     STICKY MOBILE CTA
+     ========================================================= */
+  var stickyCta = document.getElementById('stickyCta');
+  var hero = document.querySelector('.hero');
+  var finalCta = document.getElementById('cta');
+
+  if (stickyCta && hero && finalCta && 'IntersectionObserver' in window) {
+    var stickyVisible = false;
+    var heroVisible = true;
+    var finalVisible = false;
+
+    var stickyIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.target === hero) heroVisible = entry.isIntersecting;
+        if (entry.target === finalCta) finalVisible = entry.isIntersecting;
+      });
+      var shouldShow = !heroVisible && !finalVisible && window.innerWidth <= 980;
+      if (shouldShow !== stickyVisible) {
+        stickyVisible = shouldShow;
+        stickyCta.classList.toggle('is-visible', shouldShow);
+        stickyCta.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
+      }
+    }, { threshold: 0 });
+
+    stickyIO.observe(hero);
+    stickyIO.observe(finalCta);
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 980) {
+        stickyCta.classList.remove('is-visible');
+        stickyCta.setAttribute('aria-hidden', 'true');
+        stickyVisible = false;
+      }
+    }, { passive: true });
   }
 
 })();
